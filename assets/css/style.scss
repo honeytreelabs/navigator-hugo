@@ -1,4 +1,56 @@
-/* https://stackoverflow.com/a/48175165/203506 */
+$black-1: rgba(0, 0, 0, 1);
+$black-2: rgba(0, 0, 0, 0.05);
+$black-3: rgba(0, 0, 0, 0.1);
+$black-4: rgba(0, 0, 0, 0.34);
+$black-5: rgba(0, 0, 0, 0.7);
+$bright-1: #f9f9f9;
+$bright-2: #ffffff;
+$bright-3: #f3f1f1;
+$bright-4: #eee;
+$bright-5: #f2f6f8;
+$bright-6: #fff;
+$btn-color: #21D6BF;
+$color-bg-main: #4e849e; // original: #1f2532
+$color-main-gradient-start: #359864; // original: #f9643d
+$color-main: #7fba00; // original: #fe2a77
+$color-subtitle: #493632; // original: #707d8f
+$error-1: #D8000C;
+$error-bg: #FFBABA;
+$grey-10: #888888;
+$grey-11: #cccccc;
+$grey-12: #838383;
+$grey-13: #333;
+$grey-14: #555;
+$grey-15: #757575;
+$grey-16: #4e595f;
+$grey-17: #404040;
+$grey-18: #222222;
+$grey-19: #bdbdbd;
+$grey-1: #ddd;
+$grey-20: #1b1b1b;
+$grey-21: #2c2c2c;
+$grey-22: #656565;
+$grey-23: #9a9a9a;
+$grey-24: #232323;
+$grey-25: #212121;
+$grey-26: #F7F7F7;
+$grey-27: #0c0c0c;
+$grey-2:#848484;
+$grey-3: #777;
+$grey-4: #cfcfcf;
+$grey-5: #666;
+$grey-6: #e5e5e5;
+$grey-7: #444;
+$grey-8: #dedede;
+$grey-9: #888;
+$orange-1: #ffa535;
+$pink-1: $color-main;
+$pink-2: $color-main;
+// $pink-3: rgba(240, 50, 107, 0.9);
+$pink-3: unquote($color-main + "e6");
+$pink-4: $color-main;
+$pink-5: $color-main;
+$success-bg: #6cb670;
 
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700");
 body {
@@ -9,7 +61,7 @@ body {
 
 p {
   font-family: "Titillium Web", sans-serif;
-  color: #9a9a9a;
+  color: $grey-23;
   font-size: 15px;
 }
 
@@ -51,13 +103,13 @@ a, a:focus, a:hover {
 }
 
 a:focus, a:hover {
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .btn-main, .btn-main-sm {
-  background-color: #21D6BF;
-  background-image: linear-gradient(100deg, #f9643d, #fe2a77);
-  color: #fff;
+  background-color: $btn-color;
+  background-image: linear-gradient(100deg, $color-main-gradient-start, $pink-5);
+  color: $bright-6;
   display: inline-block;
   font-size: 14px;
   letter-spacing: 1px;
@@ -68,7 +120,7 @@ a:focus, a:hover {
 }
 
 .btn-main:hover, .btn-main-sm:hover {
-  color: #fff;
+  color: $bright-6;
 }
 
 .btn-main-sm {
@@ -77,8 +129,8 @@ a:focus, a:hover {
 }
 
 .btn-transparent {
-  color: #fff;
-  border: 1px solid #fff;
+  color: $bright-6;
+  border: 1px solid $bright-6;
   display: inline-block;
   font-size: 13px;
   letter-spacing: 1px;
@@ -87,7 +139,7 @@ a:focus, a:hover {
 }
 
 .btn-transparent:hover {
-  color: #fff;
+  color: $bright-6;
 }
 
 .mt-10 {
@@ -111,7 +163,7 @@ a:focus, a:hover {
 }
 
 .btn:focus {
-  color: #ddd;
+  color: $grey-1;
 }
 
 #home {
@@ -151,7 +203,7 @@ a:focus, a:hover {
 }
 
 #preloader {
-  background: #f0326b;
+  background: $pink-4;
   height: 100%;
   opacity: 1;
   filter: alpha(opacity=100);
@@ -188,7 +240,7 @@ a:focus, a:hover {
   margin: 0 auto;
   width: 15%;
   height: 15%;
-  background-color: #fff;
+  background-color: $bright-6;
   border-radius: 100%;
   -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
   animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
@@ -333,7 +385,7 @@ a:focus, a:hover {
 
 .title h2 {
   font-size: 35px;
-  color: #232323;
+  color: $grey-24;
   text-transform: capitalize;
   margin-bottom: 8px;
   font-weight: 700;
@@ -348,7 +400,7 @@ a:focus, a:hover {
 }
 
 .title p {
-  color: #848484;
+  color: $grey-2;
   width: 50%;
   margin: 0 auto;
 }
@@ -376,19 +428,19 @@ a:focus, a:hover {
 }
 
 .bg-gray {
-  background: #f9f9f9;
+  background: $bright-1;
 }
 
 .color-gray {
-  color: #777;
+  color: $grey-3;
 }
 
 .shadow {
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.34);
+  box-shadow: 0px 0px 30px 0px $black-4;
 }
 
 .gradient, .title .border, .service-2 .service-item i {
-  background-image: linear-gradient(100deg, #f9643d, #fe2a77);
+  background-image: linear-gradient(100deg, $color-main-gradient-start, $pink-5);
 }
 
 .header-bradcrumb {
@@ -396,13 +448,13 @@ a:focus, a:hover {
 }
 
 .header-bradcrumb a, .header-bradcrumb .active {
-  color: #cfcfcf;
+  color: $grey-4;
   font-weight: 200;
   font-family: "Titillium Web", sans-serif;
 }
 
 .header-bradcrumb a:hover {
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .slick-slide {
@@ -419,23 +471,23 @@ a:focus, a:hover {
 }
 
 .commonTab .nav-tabs .nav-item .nav-link {
-  background: #f9f9f9;
-  color: #666;
+  background: $bright-1;
+  color: $grey-5;
   text-transform: capitalize;
   border-radius: 0;
 }
 
 .commonTab .nav-tabs .nav-item .nav-link.active {
-  border: 1px solid #f0326b;
-  background: #f0326b;
-  color: #fff;
+  border: 1px solid $pink-4;
+  background: $pink-4;
+  color: $bright-6;
 }
 
 .commonTab .nav-tabs .nav-item .nav-link:hover {
-  border: 1px solid #f0326b;
+  border: 1px solid $pink-4;
   border-radius: 0;
-  background: #f0326b;
-  color: #fff;
+  background: $pink-4;
+  color: $bright-6;
 }
 
 .commonTab .tab-content {
@@ -448,10 +500,10 @@ a:focus, a:hover {
 }
 
 .single-page-header {
-  background: #1f2532;
+  background: $color-bg-main;
   padding: 50px 0;
   text-align: center;
-  color: #fff;
+  color: $bright-6;
   position: relative;
 }
 
@@ -465,16 +517,16 @@ a:focus, a:hover {
 }
 
 .single-page-header .breadcrumb li a {
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .navigation {
   transition: .3s all;
-  background: #1f2532;
+  background: $color-bg-main;
 }
 
 .select-language a {
-  color: #fff;
+  color: $bright-6;
   text-transform: uppercase;
   font-weight: 600;
   margin-left: 15px;
@@ -494,15 +546,15 @@ a:focus, a:hover {
   position: sticky;
   top: 0;
   width: 100%;
-  color: #fff;
+  color: $bright-6;
   transition: all 0.2s ease-out 0s;
   padding: 10px 0;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px 0 $black-3;
   z-index: 10;
 }
 
 .navigation .navbar-nav > li.active .nav-link {
-  color: #fff;
+  color: $bright-6;
 }
 
 .navigation .navbar-nav > li > .nav-link {
@@ -528,11 +580,11 @@ a:focus, a:hover {
 
 .navigation .navbar-nav > li > a:hover, .navigation .navbar-nav > li > a:active, .navigation .navbar-nav > li > a:focus {
   background: none;
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .navigation .navbar-toggler {
-  color: #fff;
+  color: $bright-6;
   font-size: 30px;
   cursor: pointer;
   outline: none;
@@ -548,13 +600,13 @@ a:focus, a:hover {
 
 .navigation .dropdown .dropdown-item {
   padding: 8px 15px;
-  color: #fff;
+  color: $bright-6;
   font-size: 13px;
 }
 
 .navigation .dropdown .dropdown-item:hover {
   background: transparent;
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .navigation .dropdown .dropdown-menu {
@@ -565,7 +617,7 @@ a:focus, a:hover {
           animation-fill-mode: forwards;
   -webkit-transform: scale(1, 0);
           transform: scale(1, 0);
-  background-color: #000;
+  background-color: $black-1;
   display: block;
   opacity: 0;
   transition: opacity 0.3s ease-in-out,-webkit-transform 0.3s;
@@ -603,7 +655,7 @@ a:focus, a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #1f2532;
+  background: $color-bg-main;
 }
 
 @media (max-width: 480px) {
@@ -613,7 +665,7 @@ a:focus, a:hover {
 }
 
 .hero-area .block {
-  color: #fff;
+  color: $bright-6;
   padding-left: 30px;
 }
 
@@ -629,7 +681,7 @@ a:focus, a:hover {
 }
 
 .hero-area .block p {
-  color: #707d8f;
+  color: $color-subtitle;
   margin-bottom: 20px;
 }
 
@@ -677,8 +729,8 @@ a:focus, a:hover {
   transition: -webkit-transform 300ms ease;
   transition: transform 300ms ease;
   transition: transform 300ms ease, -webkit-transform 300ms ease;
-  background: #fff;
-  color: #f0326b;
+  background: $bright-6;
+  color: $pink-4;
   line-height: 80px;
   font-size: 30px;
   margin-left: 5px;
@@ -699,7 +751,7 @@ a:focus, a:hover {
 }
 
 .hero-area-video .block {
-  color: #fff;
+  color: $bright-6;
   text-align: center;
 }
 
@@ -710,7 +762,7 @@ a:focus, a:hover {
 }
 
 .hero-area-video .block p {
-  color: #fff;
+  color: $bright-6;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 3px;
@@ -722,7 +774,7 @@ a:focus, a:hover {
 }
 
 .dark-bg {
-  background: rgba(0, 0, 0, 0.7);
+  background: #000000b3;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -733,7 +785,7 @@ a:focus, a:hover {
   About us section
 ==================================================================*/
 .about {
-  background: #fff;
+  background: $bright-6;
 }
 
 .about h2 {
@@ -750,7 +802,7 @@ a:focus, a:hover {
 
 .about h4 {
   font-size: 14px;
-  color: #f0326b;
+  color: $pink-4;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -774,7 +826,7 @@ a:focus, a:hover {
   About us 2 section
 ==================================================================*/
 .about-2 {
-  background: #F7F7F7;
+  background: $grey-26;
 }
 
 .about-2 h2 {
@@ -789,9 +841,9 @@ a:focus, a:hover {
   display: inline-block;
   width: 12%;
   height: 3px;
-  background-color: #ffa535;
-  background-image: linear-gradient(100deg, #f9643d, #fe2a77);
-  background-image: linear-gradient(100deg, #f9643d, #fe2a77);
+  background-color: $orange-1;
+  background-image: linear-gradient(100deg, $color-main-gradient-start, $pink-5);
+  background-image: linear-gradient(100deg, $color-main-gradient-start, $pink-5);
 }
 
 @media (max-width: 768px) {
@@ -806,7 +858,7 @@ a:focus, a:hover {
 .call-to-action {
   padding: 100px 0;
   background-size: cover;
-  color: #fff;
+  color: $bright-6;
 }
 
 .call-to-action h2 {
@@ -814,7 +866,7 @@ a:focus, a:hover {
 }
 
 .call-to-action p {
-  color: #fff;
+  color: $bright-6;
 }
 
 .call-to-action .btn-main, .call-to-action .btn-main-sm {
@@ -828,7 +880,7 @@ a:focus, a:hover {
   padding: 100px 0;
   background-image: url("../images/call-to-action/call-to-action-bg.jpg");
   background-size: cover;
-  color: #fff;
+  color: $bright-6;
 }
 
 .call-to-action-2 h2 {
@@ -836,7 +888,7 @@ a:focus, a:hover {
 }
 
 .call-to-action-2 p {
-  color: #fff;
+  color: $bright-6;
 }
 
 .call-to-action-2 .btn-main, .call-to-action-2 .btn-main-sm {
@@ -858,10 +910,10 @@ a:focus, a:hover {
 
 .contact-form .form-control {
   background-color: transparent;
-  border: 1px solid #dedede;
+  border: 1px solid $grey-8;
   box-shadow: none;
   height: 45px !important;
-  color: #0c0c0c;
+  color: $grey-27;
   height: 38px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -871,7 +923,7 @@ a:focus, a:hover {
 .contact-form input:hover,
 .contact-form textarea:hover,
 .contact-form #contact-submit:hover {
-  border-color: #f0326b;
+  border-color: $pink-4;
 }
 
 .contact-form #contact-submit {
@@ -879,8 +931,8 @@ a:focus, a:hover {
   padding: 15px 0;
   width: 100%;
   margin: 0;
-  background: #f0326b;
-  color: #fff;
+  background: $pink-4;
+  color: $bright-6;
   border-radius: 0;
   cursor: pointer;
 }
@@ -909,7 +961,7 @@ a:focus, a:hover {
   height: 30px;
   width: 30px;
   text-align: center;
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .social-icon li a i {
@@ -922,16 +974,16 @@ a:focus, a:hover {
 .error {
   display: none;
   padding: 10px;
-  color: #D8000C;
+  color: $error-1;
   border-radius: 4px;
   font-size: 13px;
-  background-color: #FFBABA;
+  background-color: $error-bg;
 }
 
 .success {
-  background-color: #6cb670;
+  background-color: $success-bg;
   border-radius: 4px;
-  color: #fff;
+  color: $bright-6;
   display: none;
   font-size: 13px;
   padding: 10px;
@@ -943,7 +995,7 @@ a:focus, a:hover {
 
 .map #map {
   height: 400px;
-  color: white;
+  color: $bright-2;
 }
 
 .contact-meta-block {
@@ -951,9 +1003,9 @@ a:focus, a:hover {
   padding: 40px 0;
   min-height: 250px;
   text-align: center;
-  background: #fff;
+  background: $bright-6;
   border-radius: 3px;
-  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 3px 9px $black-2;
 }
 
 .contact-meta-block > i {
@@ -967,7 +1019,7 @@ a:focus, a:hover {
 ==================================================================*/
 .counters-item {
   padding-bottom: 30px;
-  color: #444;
+  color: $grey-7;
   position: relative;
 }
 
@@ -976,7 +1028,7 @@ a:focus, a:hover {
 }
 
 .counters-item:before {
-  background: #e5e5e5;
+  background: $grey-6;
   content: "";
   margin-top: -27.5px;
   height: 55px;
@@ -1000,13 +1052,13 @@ a:focus, a:hover {
 .counters-item i {
   font-size: 40px;
   display: inline-block;
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .counters-item h3 {
   font-size: 18px;
   margin: 0;
-  color: #666;
+  color: $grey-5;
 }
 
 /*=================================================================
@@ -1017,7 +1069,7 @@ a:focus, a:hover {
   border-radius: 3px;
   padding-bottom: 40px;
   text-align: center;
-  background: #f9f9f9;
+  background: $bright-1;
 }
 
 .pricing-table .pricing-item a.btn-main, .pricing-table .pricing-item a.btn-main-sm {
@@ -1032,7 +1084,7 @@ a:focus, a:hover {
 .pricing-table .pricing-item li {
   font-weight: 400;
   padding: 10px 0;
-  color: #666;
+  color: $grey-5;
 }
 
 .pricing-table .pricing-item li i {
@@ -1044,11 +1096,11 @@ a:focus, a:hover {
   text-align: center;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
-  color: #fff;
+  color: $bright-6;
 }
 
 .pricing-table .price-title > h3 {
-  color: #fff;
+  color: $bright-6;
   font-weight: 700;
   margin: 0 0 5px;
   font-size: 15px;
@@ -1056,7 +1108,7 @@ a:focus, a:hover {
 }
 
 .pricing-table .price-title > p {
-  color: #fff;
+  color: $bright-6;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -1088,19 +1140,19 @@ a:focus, a:hover {
   font-weight: 600;
   text-transform: uppercase;
   border: none;
-  color: #777;
+  color: $grey-3;
   outline: none;
   background: none;
 }
 
 .portfolio-filter button:hover {
-  border-bottom: 2px solid #f0326b;
-  color: #000;
+  border-bottom: 2px solid $pink-4;
+  color: $black-1;
 }
 
 .portfolio-filter button.active {
-  border-bottom: 2px solid #f0326b;
-  color: #000;
+  border-bottom: 2px solid $pink-4;
+  color: $black-1;
 }
 
 .portfolio-items-wrapper li {
@@ -1121,7 +1173,7 @@ a:focus, a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(240, 50, 107, 0.9);
+  background: $pink-3;
   transition: .3s all;
 }
 
@@ -1162,12 +1214,12 @@ a:focus, a:hover {
 }
 
 .portfolio-block .caption h4 a {
-  color: #fff;
+  color: $bright-6;
 }
 
 .portfolio-block .caption .search-icon {
-  background: #f0326b;
-  color: #fff;
+  background: $pink-4;
+  color: $bright-6;
   display: inline-block;
   padding: 4px 13px;
   font-size: 25px;
@@ -1195,20 +1247,20 @@ a:focus, a:hover {
 
 .services .service-block i {
   font-size: 40px;
-  color: #f0326b;
-  background: linear-gradient(100deg, #f9643d, #fe2a77);
+  color: $pink-4;
+  background: linear-gradient(100deg, $color-main-gradient-start, $pink-5);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .services .service-block h3 {
-  color: #333;
+  color: $grey-13;
   font-size: 18px;
 }
 
 .services .service-block p {
-  color: #777;
+  color: $grey-3;
 }
 
 /*=================================================================
@@ -1233,8 +1285,8 @@ a:focus, a:hover {
 }
 
 .service-2 .service-item {
-  background: #fff;
-  border: 1px solid #eee;
+  background: $bright-6;
+  border: 1px solid $bright-4;
   padding: 50px 20px;
   margin-right: -1px;
   margin-bottom: -1px;
@@ -1246,7 +1298,7 @@ a:focus, a:hover {
   position: absolute;
   top: 0;
   left: 20px;
-  color: #f3f1f1;
+  color: $bright-3;
   font-weight: 700;
 }
 
@@ -1254,8 +1306,8 @@ a:focus, a:hover {
   font-size: 30px;
   display: inline-block;
   border-radius: 30px;
-  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
-  color: #fff;
+  box-shadow: 0 5px 6px 0 $black-3;
+  color: $bright-6;
   height: 55px;
   line-height: 55px;
   margin-bottom: 20px;
@@ -1264,8 +1316,8 @@ a:focus, a:hover {
 }
 
 .service-list .block {
-  background: #f0326b;
-  color: #fff;
+  background: $pink-4;
+  color: $bright-6;
   padding: 30px;
 }
 
@@ -1280,7 +1332,7 @@ a:focus, a:hover {
 
 .service-list .block ul li {
   margin-bottom: 6px;
-  color: #f9f9f9;
+  color: $bright-1;
 }
 
 .client-service-list li{
@@ -1288,7 +1340,7 @@ a:focus, a:hover {
 }
 .client-service-list li i{
   margin-right: 10px;
-  color: #f0326b;
+  color: $pink-4;
 }
 
 /*=================================================================
@@ -1311,7 +1363,7 @@ a:focus, a:hover {
 }
 
 .team-skills .progress-block .progress .progress-bar {
-  background: #f0326b;
+  background: $pink-4;
   box-shadow: none;
 }
 
@@ -1338,52 +1390,52 @@ a:focus, a:hover {
 }
 
 .development-steps .step p {
-  color: #cccccc;
+  color: $grey-11;
   font-size: 14px;
   line-height: 22px;
 }
 
 .development-steps .step-1 {
-  background-color: #f2f6f8;
+  background-color: $bright-5;
 }
 
 .development-steps .step-1 h4 {
-  color: #212121;
+  color: $grey-25;
 }
 
 .development-steps .step-1 p {
-  color: #838383;
+  color: $grey-12;
 }
 
 .development-steps .step-2 {
-  background-color: #f0326b;
+  background-color: $pink-4;
 }
 
 .development-steps .step-2 h4, .development-steps .step-2 p {
-  color: #fff;
+  color: $bright-6;
 }
 
 .development-steps .step-3 {
-  background: #df104e;
+  background: $pink-1;
 }
 
 .development-steps .step-3 h4, .development-steps .step-3 p {
-  color: #fff;
+  color: $bright-6;
 }
 
 .development-steps .step-4 {
-  background: #c70f46;
+  background: $pink-2;
 }
 
 .development-steps .step-4 h4, .development-steps .step-4 p {
-  color: #fff;
+  color: $bright-6;
 }
 
 /*=================================================================
   Our Team
   ==================================================================*/
 .team-member {
-  background: #fff;
+  background: $bright-6;
   margin-bottom: 15px;
 }
 
@@ -1403,16 +1455,16 @@ a:focus, a:hover {
 .team-member .member-content h3 {
   font-size: 20px;
   margin: 0 0 5px;
-  color: #333;
+  color: $grey-13;
 }
 
 .team-member .member-content span {
   font-size: 14px;
-  color: #555;
+  color: $grey-14;
 }
 
 .team-member .member-content p {
-  color: #777;
+  color: $grey-3;
   margin-top: 10px;
   padding: 0 15px;
 }
@@ -1432,15 +1484,15 @@ a:focus, a:hover {
 }
 
 .team-member .member-content ul li a i {
-  color: #f0326b;
-  background: linear-gradient(100deg, #f9643d, #fe2a77);
+  color: $pink-4;
+  background: linear-gradient(100deg, $color-main-gradient-start, $pink-5);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .team-member .member-content ul li a::hover {
-  background-color: #6cb670;
+  background-color: $success-bg;
   border: 1px solid transparent;
 }
 
@@ -1457,13 +1509,13 @@ a:focus, a:hover {
   Testimonial section
 ==================================================================*/
 .testimonial {
-  background: #f0326b;
+  background: $pink-4;
   position: relative;
 }
 
 .testimonial .item i {
   font-size: 40px;
-  color: #fff;
+  color: $bright-6;
   margin-bottom: 30px;
   display: inline-block;
 }
@@ -1474,14 +1526,14 @@ a:focus, a:hover {
 
 .testimonial .item .client-details p {
   font-size: 17px;
-  color: #fff;
+  color: $bright-6;
   font-weight: 200;
   padding: 0 10%;
 }
 
 .testimonial .item .client-meta {
   margin-top: 8px;
-  color: #fff;
+  color: $bright-6;
 }
 
 .testimonial .item .client-meta h4 {
@@ -1503,7 +1555,7 @@ a:focus, a:hover {
   Latest Posts
 ==================================================================*/
 .post-item {
-  background: #fff;
+  background: $bright-6;
   margin-bottom: 40px;
 }
 
@@ -1524,21 +1576,21 @@ a:focus, a:hover {
 }
 
 .post-item .post-title h3 a {
-  color: #000;
+  color: $black-1;
 }
 
 .post-item .post-meta {
   font-size: 14px;
-  color: #888;
+  color: $grey-9;
 }
 
 .post-item .post-meta a {
-  color: #000;
+  color: $black-1;
   margin: 3px 0;
 }
 
 .post-item .post-content p {
-  color: #757575;
+  color: $grey-15;
   margin: 10px 0;
 }
 
@@ -1567,7 +1619,7 @@ a:focus, a:hover {
 }
 
 .post-excerpt h3 a {
-  color: #000;
+  color: $black-1;
 }
 
 .post-excerpt blockquote {
@@ -1577,7 +1629,7 @@ a:focus, a:hover {
 }
 
 .single-blog {
-  background-color: #fff;
+  background-color: $bright-6;
   margin-bottom: 50px;
   padding: 20px;
 }
@@ -1585,24 +1637,24 @@ a:focus, a:hover {
 .blog-subtitle {
   font-size: 15px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid $grey-8;
   margin-bottom: 25px;
   text-transform: uppercase;
 }
 
 .next-prev {
-  border-bottom: 1px solid #dedede;
-  border-top: 1px solid #dedede;
+  border-bottom: 1px solid $grey-8;
+  border-top: 1px solid $grey-8;
   margin: 20px 0;
   padding: 25px 0;
 }
 
 .next-prev a {
-  color: #000;
+  color: $black-1;
 }
 
 .next-prev a:hover {
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .next-prev .prev-post i {
@@ -1619,13 +1671,13 @@ a:focus, a:hover {
 }
 
 .social-profile ul li a {
-  color: #4e595f;
+  color: $grey-16;
   display: block;
   font-size: 16px;
 }
 
 .social-profile ul li a i:hover {
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .comments-section {
@@ -1641,7 +1693,7 @@ a:focus, a:hover {
 }
 
 .post-author > img {
-  border: 1px solid #dedede;
+  border: 1px solid $grey-8;
   max-width: 120px;
   padding: 5px;
   width: 100%;
@@ -1656,7 +1708,7 @@ a:focus, a:hover {
 }
 
 .comment-wrap {
-  border: 1px solid #dedede;
+  border: 1px solid $grey-8;
   border-radius: 1px;
   margin-left: 20px;
   padding: 10px;
@@ -1673,13 +1725,13 @@ a:focus, a:hover {
 }
 
 .comment-wrap .media .media-heading a {
-  color: #f0326b;
+  color: $pink-4;
   font-size: 13px;
 }
 
 .comment-wrap .media .comment-meta {
   font-size: 12px;
-  color: #888;
+  color: $grey-9;
 }
 
 .comment-wrap .media p {
@@ -1698,7 +1750,7 @@ a:focus, a:hover {
 
 .comment-reply-form input:focus, .comment-reply-form textarea:focus {
   box-shadow: none;
-  border: 1px solid #f0326b;
+  border: 1px solid $pink-4;
 }
 
 .comment-reply-form textarea, .comment-reply-form .btn-main, .comment-reply-form .btn-main-sm {
@@ -1713,14 +1765,14 @@ a:focus, a:hover {
   font-size: 20px;
 }
 .pagination li a{
-  color: #404040;
+  color: $grey-17;
 }
 .pagination li.disabled a{
-  color: #cccccc;
+  color: $grey-11;
 }
 .pagination li.active a{
-  background-color: #f0326b !important;
-  border-color: #f0326b !important;
+  background-color: $pink-4 !important;
+  border-color: $pink-4 !important;
   font-weight: 600;
 }
 
@@ -1728,15 +1780,15 @@ a:focus, a:hover {
   Footer section
 ==================================================================*/
 .top-footer {
-  background-color: #222222;
-  border-top: 1px solid #404040;
+  background-color: $grey-18;
+  border-top: 1px solid $grey-17;
   padding: 100px 0 80px;
 }
 
 .top-footer h3 {
   font-size: 16px;
   line-height: 1.5;
-  color: #fff;
+  color: $bright-6;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1746,7 +1798,7 @@ a:focus, a:hover {
 .top-footer p {
   font-size: 13px;
   line-height: 30px;
-  color: #bdbdbd;
+  color: $grey-19;
   font-weight: 300;
   padding-right: 20px;
 }
@@ -1754,7 +1806,7 @@ a:focus, a:hover {
 .top-footer li a {
   font-size: 13px;
   line-height: 30px;
-  color: #bdbdbd;
+  color: $grey-19;
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: capitalize;
@@ -1764,20 +1816,20 @@ a:focus, a:hover {
 }
 
 .top-footer li a:hover {
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .footer-bottom {
   text-align: center;
-  background-color: #1b1b1b;
-  border-top: 1px solid #2c2c2c;
+  background-color: $grey-20;
+  border-top: 1px solid $grey-21;
   padding: 30px 0;
 }
 
 .footer-bottom h5 {
   font-size: 14px;
   line-height: 1;
-  color: #888888;
+  color: $grey-10;
   font-weight: 400;
   text-transform: uppercase;
   margin-top: 7px;
@@ -1787,7 +1839,7 @@ a:focus, a:hover {
 .footer-bottom h6 {
   font-size: 13px;
   line-height: 15px;
-  color: #888888;
+  color: $grey-10;
   font-weight: 400;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -1795,11 +1847,11 @@ a:focus, a:hover {
 }
 
 .footer-bottom p {
-  color: #656565;
+  color: $grey-22;
 }
 
 .footer-bottom a {
-  color: #f0326b;
+  color: $pink-4;
 }
 
 .subscribe-form .form-control {
