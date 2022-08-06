@@ -1,27 +1,36 @@
 {{ define "main" }}
-
-<section class="blog-single section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <img src="{{ with .Params.image }}{{ . | absURL }}{{ end }}" class="w-100 mb-3" alt="Post-Image">
-                <h2>{{ .Title }}</h2>
-                <div class="post-meta mb-5">
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <span>By</span>
-                            {{ .Params.author }}
-                        </li>
-                        <li class="list-inline-item">
-                            <span>at</span>
-                            <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
-                        </li>
-                    </ul>
-                </div>
-                {{ .Content }}
-            </div>
-        </div>
+  <article>
+    <div class="post">
+      {{ .Render "header" }}
+      <div id="socnet-share">
+        {{/*  {{ partial "share-buttons" . }}  */}}
+      </div>
+      <div class="content">
+        {{ .Render "featured" }}
+        {{ if and (gt .WordCount .Site.Params.tocWords) ( .Site.Params.toc ) }}
+	        {{/*  <p><b>Table of contents</b></p>  */}}
+          {{ .TableOfContents }}
+        {{ end }}
+        {{ .Content }}
+      </div>
+      <footer>
+        {{ .Render "stats" }}
+      </footer>
     </div>
-</section>
-
+    {{ if not ( eq .Params.authorbox false) }}
+      {{ .Render "authorbox" }}
+    {{ end }}
+    {{ if not ( eq .Params.comments false) }}
+      {{ .Render "comments" }}
+    {{ end }}
+  </article>
+  <div class="pagination">
+    {{ if .NextInSection }}
+      <a href="{{ .NextInSection.RelPermalink }}" class="button left"><span>{{ .NextInSection.Title }}</span></a>
+    {{ end }}
+    {{ if .PrevInSection }}
+      <a href="{{ .PrevInSection.RelPermalink }}" class="button right"><span>{{ .PrevInSection.Title }}</span></a>
+    {{ end }}
+  </div>
 {{ end }}
+
