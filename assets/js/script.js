@@ -277,7 +277,7 @@
 		});
 	}
 
-	var map = $('#map');
-	if (map.length != 0) {
-		google.maps.event.addDomListener(window, 'load', initialize);
-	}
+	// var map = $('#map');
+	// if (map.length != 0) {
+	// 	google.maps.event.addDomListener(window, 'load', initialize);
+	// }
