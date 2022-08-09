@@ -11,7 +11,9 @@
             <article class="col-12 col-md-4">
                 <div class="post-item">
                     <div class="post-thumb">
-                        <img class="img-fluid shadow rounded" src="{{ .Permalink }}{{ .Params.header_src }}" alt="{{ .Params.header_alt }}">
+                        <a href="{{ .Permalink }}">
+                            <img class="img-fluid shadow rounded" src="{{ .Permalink }}{{ .Params.header_src }}" alt="{{ .Params.header_alt }}">
+                        </a>
                     </div>
                     <div class="post-title">
                         <h3 class="mt-0">
@@ -22,7 +24,9 @@
                         <ul class="list-inline">
                             <li class="list-inline-item">
                                 <span>By</span>
-                                {{ .Params.author }}
+                                {{ $author := index .Site.Data.authors (.Params.author | default "default") }}
+                                <a href="{{ $.Site.BaseURL }}author/{{ $author.handle }}">
+                                {{ $author.name }}
                             </li>
                             <li class="list-inline-item">
                                 <span>at</span>
@@ -31,7 +35,11 @@
                         </ul>
                     </div>
                     <div class="post-content">
-                        <p>{{ .Summary }}</p>
+                        {{ if .Params.draft }}
+                            <div style="background-color:Khaki;">{{ .Summary }}</div>
+                        {{else}}
+                            <p>{{ .Summary }}</p>
+                        {{end}}
                     </div>
                     <a class="btn btn-main" href="{{ .Permalink }}">Read more</a>
                 </div>
