@@ -23,14 +23,15 @@
 {{ "<!-- Slick Carousel -->" | safeHTML }}
 <link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick.css` | absURL }}">
 <link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick-theme.css` | absURL }}">
+{{ $outputStyle := "compressed" }}
 {{ "<!-- Google Fonts / Local Hosting -->" | safeHTML }}
-{{- $fontsCSSOptions := (dict "targetPath" "css/fonts.min.css" "outputStyle" "compressed") -}}
-{{- $fonts := resources.Get "css/fonts.css" | resources.ToCSS $fontsCSSOptions | resources.Fingerprint -}}
+{{ $fonts := resources.Get "css/fonts.css" | resources.ToCSS (dict "targetPath" "css/fonts.min.css" "outputStyle" $outputStyle) | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $fonts.RelPermalink }}" integrity="{{ $fonts.Data.Integrity }}">
-{{ "<!-- Main Stylesheet -->" | safeHTML }}
-
-{{ $sass := resources.Get "css/style.scss" }}
-{{ $styles := $sass | resources.ToCSS | minify }}
-<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+{{ "<!-- Original Stylesheet -->" | safeHTML }}
+{{ $style := resources.Get "css/style.scss" | resources.ToCSS (dict "targetPath" "css/style.min.css" "outputStyle" $outputStyle) | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
+{{ "<!-- Additional Stylesheet -->" | safeHTML }}
+{{ $main := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "css/main.min.css" "outputStyle" $outputStyle) | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}">
 
 </head>
