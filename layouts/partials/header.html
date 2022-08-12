@@ -44,7 +44,7 @@
                             </li>
                             {{ else }}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ $.Site.BaseURL }}#{{ .Name }}">{{ i18n .Name }}</a>
+                                <a class="nav-link" href="{{ $.Site.BaseURL }}{{ $.Site.Language }}#{{ .Name }}">{{ i18n .Name }}</a>
                             </li>
                             {{ end }}
                             {{ end }}
