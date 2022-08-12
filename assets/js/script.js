@@ -20,18 +20,6 @@
 		});
 
 		/* ========================================================================= */
-		/*	Portfolio Filtering Hook
-		/* =========================================================================  */
-		setTimeout(function () {
-			var filterizd = $('.filtr-container').filterizr({});
-			//Active changer
-			$('.filtr-control').on('click', function () {
-				$('.filtr-control').removeClass("active");
-				$(this).addClass("active");
-			});
-		}, 500);
-
-		/* ========================================================================= */
 		/*	Testimonial Carousel
 		/* =========================================================================  */
 
