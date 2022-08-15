@@ -29,7 +29,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ .Site.BaseURL | relLangURL }}">{{ with .Site.Params.home }}{{ . }}{{ end }}</a>
                             </li>
-                            {{ range site.Menus.nav }}
+                            {{ range site.Menus.frontpage }}
                             {{ if .HasChildren }}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -51,6 +51,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ .Site.BaseURL }}en/posts/">Blog</a>
                             </li>
+                            {{ range site.Menus.pages }}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ .URL | absLangURL }}">{{ i18n .Name }}</a>
+                            </li>
+                            {{ end }}
                             <li class="nav-item d-none d-lg-block">
                                 <!-- Icones & drapeaux de choix des langues -->
                                 <div class="select-language nav-link">
