@@ -23,6 +23,10 @@
 {{ "<!-- Slick Carousel -->" | safeHTML }}
 <link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick.css` | absURL }}">
 <link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick-theme.css` | absURL }}">
+{{ "<!-- Google Fonts / Local Hosting -->" | safeHTML }}
+{{- $fontsCSSOptions := (dict "targetPath" "css/fonts.min.css" "outputStyle" "compressed") -}}
+{{- $fonts := resources.Get "css/fonts.css" | resources.ToCSS $fontsCSSOptions | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{ $fonts.RelPermalink }}" integrity="{{ $fonts.Data.Integrity }}">
 {{ "<!-- Main Stylesheet -->" | safeHTML }}
 
 {{ $sass := resources.Get "css/style.scss" }}
