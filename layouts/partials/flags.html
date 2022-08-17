@@ -6,12 +6,12 @@
     {{ range .page.Translations }}
         {{ $flagIconURL := delimit (slice $flagIconBaseURL .Language.Lang $flagIconFileEnding) "" }}
         {{ if eq (string .Language.Lang) ($currSiteLang) }}
-        <a href="{{ .Permalink }}" class="selected"><img src= {{ $flagIconURL | absURL }} alt="IMAGE" />{{ .Language.Lang }}</a>
+        <a href="{{ .Permalink }}" class="selected"><img src= {{ $flagIconURL | absURL }} alt="{{ i18n "currentlanguage" }} {{ .Language.LanguageName }}" />{{ .Language.Lang }}</a>
         {{ else }}
-        <a href="{{ .Permalink }}"><img src= {{ $flagIconURL | absURL }} alt="IMAGE" />{{ .Language.Lang  }}</a>
+        <a href="{{ .Permalink }}"><img src= {{ $flagIconURL | absURL }} alt="{{ i18n "switchlangto" }} {{ .Language.LanguageName }}" />{{ .Language.Lang  }}</a>
         {{ end }}
     {{ end }}
 {{ else }}
     {{ $flagIconURL := delimit (slice $flagIconBaseURL .site.Language "-only" $flagIconFileEnding) "" }}
-    <a><img src= {{ $flagIconURL | absURL }} alt="IMAGE" />{{ .site.Language }}</a>
+    <a><img src= {{ $flagIconURL | absURL }} alt="{{ i18n "onlyavailablein" }} {{.site.Language.LanguageName}}" />{{ .site.Language }}</a>
 {{ end }}
