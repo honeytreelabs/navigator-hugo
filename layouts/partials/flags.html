@@ -9,7 +9,7 @@
         <a href="{{ .Permalink }}" class="selected"><img src= {{ $flagIconURL | absURL }} alt="IMAGE" />{{ .Language.Lang }}</a>
         {{ else }}
         <a href="{{ .Permalink }}"><img src= {{ $flagIconURL | absURL }} alt="IMAGE" />{{ .Language.Lang  }}</a>
-        {{ end }}                    
+        {{ end }}
     {{ end }}
 {{ else }}
     {{ $flagIconURL := delimit (slice $flagIconBaseURL .site.Language "-only" $flagIconFileEnding) "" }}
