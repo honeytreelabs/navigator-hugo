@@ -1,12 +1,20 @@
 <!-- Menu de changement de langue -->
 {{ $icone_base_url := "images/logos/lang-" }}
 {{ $icone_end_url := ".gif" }}
-<!-- Utilise ".liste" et ".site" passés dans le scope du range pour obtenir .Site.Language-->
-{{ $icone_url := delimit (slice $icone_base_url .liste.code $icone_end_url) "" }}
-<!-- TODO : Faire un style adapté aux drapeaux/langue + highligh l'actuel -->
-{{ if eq (string .liste.code) (string .site.Language) }}
-    <a href="{{ .liste.code | absURL }}" class="selected"><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .liste.code }}
-    {{ else }}
-    <a href="{{ .liste.code | absURL }}"><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .liste.code }}
+<!-- Uses ".liste" and ".site" spent in the scope of the Range to obtain .Site.Language-->
+
+{{ if .page.IsTranslated }}
+    {{ $icone_url := delimit (slice $icone_base_url .liste.code $icone_end_url) "" }}
+    <!-- TODO : make a style suitable for flags/language + highligh the current one -->
+    {{ if eq (string .liste.code) (string .site.Language) }}
+        <a href="{{ .liste.code | absURL }}" class="selected"><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .liste.code }}
+        {{/*  <a href="{{ path.Join .liste.code .page.RelPermalink | absURL }}" class="selected"><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .liste.code }}  */}}
+        {{ else }}
+        <a href="{{ .liste.code | absURL }}"><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .liste.code }}
+        {{/*  <a href="{{ path.Join .liste.code .page.RelPermalink | absURL }}"><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .liste.code }}  */}}
+    {{ end }}
+{{ else }}
+    {{ $icone_url := delimit (slice $icone_base_url .site.Language "-only" $icone_end_url) "" }}
+    <a><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .site.Language }}
 {{ end }}
 </a>

@@ -20,7 +20,7 @@
                         <div id="drapeaux" class="select-language d-block d-lg-none">
                             <!-- Pour passer la langue actuelle (variable globale) dans la range => explicitement -->
                             {{ range .Site.Params.listeLangues }}
-                            {{ partial "flags.html" (dict "site" $.Site "liste" .) }}
+                            {{ partial "flags.html" (dict "site" $.Site "liste" . "page" $.Page) }}
                             {{ end }}
                         </div>
                     </div>
