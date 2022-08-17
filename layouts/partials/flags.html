@@ -1,20 +1,17 @@
-<!-- Menu de changement de langue -->
-{{ $icone_base_url := "images/logos/lang-" }}
-{{ $icone_end_url := ".gif" }}
-<!-- Uses ".liste" and ".site" spent in the scope of the Range to obtain .Site.Language-->
+{{ $flagIconBaseURL  := "images/logos/lang-" }}
+{{ $flagIconFileEnding := ".gif" }}
+{{ $currSiteLang := .site.Language.Lang }}
 
 {{ if .page.IsTranslated }}
-    {{ $icone_url := delimit (slice $icone_base_url .liste.code $icone_end_url) "" }}
-    <!-- TODO : make a style suitable for flags/language + highligh the current one -->
-    {{ if eq (string .liste.code) (string .site.Language) }}
-        <a href="{{ .liste.code | absURL }}" class="selected"><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .liste.code }}
-        {{/*  <a href="{{ path.Join .liste.code .page.RelPermalink | absURL }}" class="selected"><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .liste.code }}  */}}
+    {{ range .page.Translations }}
+        {{ $flagIconURL := delimit (slice $flagIconBaseURL .Language.Lang $flagIconFileEnding) "" }}
+        {{ if eq (string .Language.Lang) ($currSiteLang) }}
+        <a href="{{ .Permalink }}" class="selected"><img src= {{ $flagIconURL | absURL }} alt="IMAGE" />{{ .Language.Lang }}</a>
         {{ else }}
-        <a href="{{ .liste.code | absURL }}"><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .liste.code }}
-        {{/*  <a href="{{ path.Join .liste.code .page.RelPermalink | absURL }}"><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .liste.code }}  */}}
+        <a href="{{ .Permalink }}"><img src= {{ $flagIconURL | absURL }} alt="IMAGE" />{{ .Language.Lang  }}</a>
+        {{ end }}                    
     {{ end }}
 {{ else }}
-    {{ $icone_url := delimit (slice $icone_base_url .site.Language "-only" $icone_end_url) "" }}
-    <a><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .site.Language }}
+    {{ $flagIconURL := delimit (slice $flagIconBaseURL .site.Language "-only" $flagIconFileEnding) "" }}
+    <a><img src= {{ $flagIconURL | absURL }} alt="IMAGE" />{{ .site.Language }}</a>
 {{ end }}
-</a>

@@ -20,7 +20,7 @@
                         <div id="drapeaux" class="select-language d-block d-lg-none">
                             <!-- Pour passer la langue actuelle (variable globale) dans la range => explicitement -->
                             {{ range .Site.Params.listeLangues }}
-                            {{ partial "flags.html" (dict "site" $.Site "liste" . "page" $.Page) }}
+                            {{ partial "flags.html" (dict "site" $.Site "page" $.Page) }}
                             {{ end }}
                         </div>
                     </div>
@@ -59,18 +59,9 @@
                             <li class="nav-item d-none d-lg-block">
                                 <!-- Icones & drapeaux de choix des langues -->
                                 <div class="select-language nav-link">
-                                    {{ if .Page.IsTranslated }}
-                                        <!-- Pour passer la langue actuelle (variable globale) dans la range => explicitement -->
-                                        {{ range .Site.Params.listeLangues }}
-                                        {{ partial "flags.html" (dict "site" $.Site "liste" . "page" $.Page) }}
-                                        {{ end }}
-                                    {{ else }}
-                                        {{ $icone_base_url := "images/logos/lang-" }}
-                                        {{ $icone_end_url := ".gif" }}
-                                        <!-- Uses ".liste" and ".site" spent in the scope of the Range to obtain .Site.Language-->
-                                        {{ $icone_url := delimit (slice $icone_base_url .Site.Language "-only" $icone_end_url) "" }}
-                                        <a><img src= {{ $icone_url | absURL }} alt="IMAGE" />{{ .Site.Language }}</a>
-                                    {{ end }}
+                                    <nav class="LangNav">
+                                        {{ partial "flags.html" (dict "site" $.Site "page" $.Page) }}
+                                    </nav>
                                 </div>
                             </li>
                         </ul>
