@@ -136,7 +136,7 @@ a:focus, a:hover {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 @media (max-width: 480px) {
@@ -811,12 +811,30 @@ a:focus, a:hover {
   background-image: linear-gradient(100deg, $color-main-gradient-start, $main-100);
 }
 
+.about-2-even h2:before {
+  position: absolute;
+  right: -2%;
+  top: 18px;
+  content: '';
+  display: inline-block;
+  width: 12%;
+  height: 3px;
+  background-color: $orange-1;
+  background-image: linear-gradient(100deg, $color-main-gradient-start, $main-100);
+  background-image: linear-gradient(100deg, $color-main-gradient-start, $main-100);
+}
+
 @media (max-width: 768px) {
   .about-2 h2:before {
     display: none;
   }
 }
 
+@media (max-width: 768px) {
+  .about-2-after h2:after {
+    display: none;
+  }
+}
 /*=================================================================
  Call To Action 1
 ==================================================================*/
