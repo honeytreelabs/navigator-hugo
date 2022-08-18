@@ -518,6 +518,14 @@ a:focus, a:hover {
   z-index: 10;
 }
 
+// https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors
+:target::before {
+  content: "";
+  display: block;
+  height: 82px; /* fixed header height*/
+  // margin: -1px 0 0; /* negative fixed header height */
+}
+
 .navigation .navbar-nav > li.active .nav-link {
   color: $white-100;
 }
