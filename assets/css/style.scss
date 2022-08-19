@@ -801,8 +801,14 @@ a:focus, a:hover {
 .about-2 {
   background: $white-100;
 }
+.about-2-even {
+  background: $white-100;
+}
 
 .about-2 h2 {
+  position: relative;
+}
+.about-2-even h2 {
   position: relative;
 }
 
@@ -837,9 +843,8 @@ a:focus, a:hover {
     display: none;
   }
 }
-
 @media (max-width: 768px) {
-  .about-2-after h2:after {
+  .about-2-even h2:before {
     display: none;
   }
 }
