@@ -50,23 +50,31 @@
 
                     <div id="cf-submit">
                         <input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
+                        <br><br>
+                        <label for="contact-dsgvo">
+                            <input type="checkbox" id="contact-dsgvo" name="contact-dsgvo">
+                            TODO TOTRANSLATE - EINVERSTÄNDNISERKLÄRUNG: Ja, ich bin damit einverstanden, dass die honeytreeLabs GmbH meine angegebenen Daten zum Zweck der Bearbeitung meiner Anfrage weiterverarbeitet.
+                        </label>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="contact2">
             <div class="col-12 col-md-4">
                 <div class="address-block contact-meta-block">
                     <i class="tf-ion-ios-email"></i>
                     <h4>Mail</h4>
+                    <ul class="list-inline social-icon">
                     {{ with .Site.Params.contact.email }}<p><a href="mailto:{{ . }}">{{ . | safeHTML }}</a></p>{{ end }}
+                    </ul>
                 </div>
             </div>
             <div class="col-12 col-md-4">
                 <div class="phone-block contact-meta-block">
                     <i class="tf-ion-ios-telephone"></i>
                     <h4>Phone</h4>
-                    <p>
+                    <ul class="list-inline social-icon">
+                    <p style="vertical-align:bottom">
                          {{ with .Site.Params.contact.phone }}<a href="tel:{{ . }}">{{ . }}</a> {{ end }}
                         <br> {{ with .Site.Params.contact.fax }} Fax: {{ . }} {{ end }}
                     </p>

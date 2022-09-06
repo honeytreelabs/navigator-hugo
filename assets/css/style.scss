@@ -67,7 +67,7 @@ a, a:focus, a:hover {
 }
 
 a:focus, a:hover {
-  color: $color-2;
+  color: $color-1;
 }
 
 .btn-main, .btn-main-sm, .btn-transparent {
@@ -85,7 +85,7 @@ a:focus, a:hover {
 }
 
 .btn-main:hover, .btn-main-sm:hover {
-  color: $white-100;
+  color: $color-1;
 }
 
 .btn-main-sm {
@@ -104,7 +104,7 @@ a:focus, a:hover {
 // }
 
 .btn-transparent:hover {
-  color: $white-100;
+  color: $color-1;
 }
 
 .mt-10 {
@@ -419,7 +419,7 @@ a:focus, a:hover {
 }
 
 .header-bradcrumb a:hover {
-  color: $color-2;
+  color: $color-1;
 }
 
 .slick-slide {
@@ -491,9 +491,9 @@ a:focus, a:hover {
 }
 
 .select-language a {
-  color: $white-100;
+  color: $black-100;
   text-transform: uppercase;
-  font-weight: 600;
+  // font-weight: 600;
   margin-left: 15px;
 }
 
@@ -514,7 +514,7 @@ a:focus, a:hover {
   color: $white-100;
   transition: all 0.2s ease-out 0s;
   padding: 0;
-  box-shadow: 0 0 3px 0 $black-010;
+  box-shadow: 0 0 20px 0 $black-010;
   z-index: 10;
 }
 
@@ -898,7 +898,7 @@ a:focus, a:hover {
   border: 1px solid $grey-light;
   box-shadow: none;
   height: 45px !important;
-  color: $black-100;
+  // color: $black-100;
   height: 38px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -908,7 +908,7 @@ a:focus, a:hover {
 .contact-form input:hover,
 .contact-form textarea:hover,
 .contact-form #contact-submit:hover {
-  border-color: $color-2;
+  border-color: $color-1;
 }
 
 .contact-form #contact-submit {
@@ -917,7 +917,7 @@ a:focus, a:hover {
   width: 100%;
   margin: 0;
   background: $color-2;
-  color: $white-100;
+  // color: $white-100;
   border-radius: 0;
   cursor: pointer;
 }
@@ -947,6 +947,10 @@ a:focus, a:hover {
   width: 30px;
   text-align: center;
   color: $color-2;
+}
+
+.social-icon a:hover {
+  color: $color-1;
 }
 
 .social-icon li a i {
@@ -991,6 +995,14 @@ a:focus, a:hover {
   background: $white-100;
   border-radius: 3px;
   box-shadow: 10px 13px 9px $black-005;
+}
+
+.contact-meta-block p {
+  margin-top: 1.5em;
+}
+
+.contact-meta-block a {
+  color: $color-2;
 }
 
 .contact-meta-block > i {
@@ -1639,7 +1651,7 @@ a:focus, a:hover {
 }
 
 .next-prev a:hover {
-  color: $color-2;
+  color: $color-1;
 }
 
 .next-prev .prev-post i {
@@ -1662,7 +1674,7 @@ a:focus, a:hover {
 }
 
 .social-profile ul li a i:hover {
-  color: $color-2;
+  color: $color-1;
 }
 
 .comments-section {
@@ -1801,7 +1813,7 @@ a:focus, a:hover {
 }
 
 .top-footer li a:hover {
-  color: $color-2;
+  color: $color-1;
 }
 
 .footer-bottom {
