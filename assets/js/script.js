@@ -126,15 +126,16 @@
 			var email = $('#email').val();
 			var subject = $('#subject').val();
 			var message = $('#message').val();
+			var checkboxDsgvo = $('#contact-dsgvo-checkbox').prop('checked');
 
 			/* in the next section we do the checking by using VARIABLE.length
 			where VARIABLE is the variable we are checking (like name, email),
 			length is a JavaScript function to get the number of characters.
 			And as you can see if the num of characters is 0 we set the error
-			variable to true and show the name_error div with the fadeIn effect. 
+			variable to true and show the name_error div with the fadeIn effect.
 			if it's not 0 then we fadeOut the div( that's if the div is shown and
-			the error is fixed it fadesOut. 
-			
+			the error is fixed it fadesOut.
+
 			The only difference from these checks is the email checking, we have
 			email.indexOf('@') which checks if there is @ in the email input field.
 			This JavaScript function will return -1 if no occurrence have been found.*/
@@ -161,6 +162,12 @@
 				$('#message').css("border-color", "#D8000C");
 			} else {
 				$('#message').css("border-color", "#666");
+			}
+			if (!checkboxDsgvo) {
+				var error = true;
+				$('#contact-dsgvo-label').css("color", "#D8000C");
+			} else {
+				$('#contact-dsgvo-label').css("color", "#666");
 			}
 
 			//now when the validation is done we check if the error variable is false (no errors)
