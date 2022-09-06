@@ -497,6 +497,10 @@ a:focus, a:hover {
   margin-left: 15px;
 }
 
+.select-language a:hover {
+  color: $color-1;
+}
+
 .select-language a.selected {
   display: none;
 }
