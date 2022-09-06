@@ -1,21 +1,17 @@
-$black-100: rgba(0, 0, 0, 1);
-$black-005: rgba(0, 0, 0, 0.05);
-$black-010: rgba(0, 0, 0, 0.1);
-$black-034: rgba(0, 0, 0, 0.34);
-$white-100: #fff;
-$btn-color: #21D6BF;
-$color-bg-main: #4e849e; // original: #1f2532
-$color-main-gradient-start: #359864; // original: #f9643d
-$main-100: #7fba00; // original: #fe2a77
-$main-090: unquote($main-100 + "e6"); // rgba(240, 50, 107, 0.9);
-$color-subtitle: #493632; // original: #707d8f
+$black-100: #000000;
+$black-005: unquote($black-100 + "0c");
+$black-010: unquote($black-100 + "19");
+$black-034: unquote($black-100 + "56");
+$white-100: #fafafa;
+$color-1: #e8ab23; // honey
+$color-2: #403d58;
+$color-3: #1b998b;
+$grey-light: #dddddd;
+$grey-dark: #222222;
+
+// out of competition
 $error-1: #D8000C;
 $error-bg: #FFBABA;
-$grey-light: #ddd;
-$grey-medium: #888;
-$grey-dark: #222;
-$orange-1: #ffa535;
-$success-bg: #6cb670;
 
 $font-prefix: './fonts/ibm/plex/';
 @import 'static/css/fonts/ibm/plex/scss/ibm-plex.scss';
@@ -29,7 +25,7 @@ body {
 
 p {
   font-family: "IBM Plex Sans", sans-serif;
-  color: $grey-medium;
+  color: $grey-dark;
   font-size: 15px;
 }
 
@@ -71,12 +67,12 @@ a, a:focus, a:hover {
 }
 
 a:focus, a:hover {
-  color: $main-100;
+  color: $color-2;
 }
 
 .btn-main, .btn-main-sm {
-  background-color: $btn-color;
-  background-image: linear-gradient(100deg, $color-main-gradient-start, $main-100);
+  background-color: $color-1;
+  background-image: linear-gradient(100deg, $color-2, $color-2);
   color: $white-100;
   display: inline-block;
   font-size: 14px;
@@ -171,7 +167,7 @@ a:focus, a:hover {
 }
 
 #preloader {
-  background: $main-100;
+  background: $color-2;
   height: 100%;
   opacity: 1;
   filter: alpha(opacity=100);
@@ -368,7 +364,7 @@ a:focus, a:hover {
 }
 
 .title p {
-  color: $grey-medium;
+  color: $grey-dark;
   width: 50%;
   margin: 0 auto;
 }
@@ -400,7 +396,7 @@ a:focus, a:hover {
 }
 
 .color-gray {
-  color: $grey-medium;
+  color: $grey-light;
 }
 
 .shadow {
@@ -408,7 +404,7 @@ a:focus, a:hover {
 }
 
 .gradient, .title .border, .service-2 .service-item i {
-  background-image: linear-gradient(100deg, $color-main-gradient-start, $main-100);
+  background-image: linear-gradient(100deg, $color-2, $color-2);
 }
 
 .header-bradcrumb {
@@ -422,7 +418,7 @@ a:focus, a:hover {
 }
 
 .header-bradcrumb a:hover {
-  color: $main-100;
+  color: $color-2;
 }
 
 .slick-slide {
@@ -440,21 +436,21 @@ a:focus, a:hover {
 
 .commonTab .nav-tabs .nav-item .nav-link {
   background: $white-100;
-  color: $grey-medium;
+  color: $grey-light;
   text-transform: capitalize;
   border-radius: 0;
 }
 
 .commonTab .nav-tabs .nav-item .nav-link.active {
-  border: 1px solid $main-100;
-  background: $main-100;
+  border: 1px solid $color-2;
+  background: $color-2;
   color: $white-100;
 }
 
 .commonTab .nav-tabs .nav-item .nav-link:hover {
-  border: 1px solid $main-100;
+  border: 1px solid $color-2;
   border-radius: 0;
-  background: $main-100;
+  background: $color-2;
   color: $white-100;
 }
 
@@ -468,7 +464,7 @@ a:focus, a:hover {
 }
 
 .single-page-header {
-  background: $color-bg-main;
+  background: $color-2;
   padding: 50px 0;
   text-align: center;
   color: $white-100;
@@ -485,12 +481,12 @@ a:focus, a:hover {
 }
 
 .single-page-header .breadcrumb li a {
-  color: $main-100;
+  color: $white-100;
 }
 
 .navigation {
   transition: .3s all;
-  background: $color-bg-main;
+  background: $white-100;
 }
 
 .select-language a {
@@ -534,7 +530,7 @@ a:focus, a:hover {
 }
 
 .navigation .navbar-nav > li > .nav-link {
-  color: $white-100;
+  color: $black-100;
   font-size: 15px;
   line-height: 26px;
   padding: 20px 15px !important;
@@ -556,11 +552,11 @@ a:focus, a:hover {
 
 .navigation .navbar-nav > li > a:hover, .navigation .navbar-nav > li > a:active, .navigation .navbar-nav > li > a:focus {
   background: none;
-  color: $main-100;
+  color: $color-1;
 }
 
 .navigation .navbar-toggler {
-  color: $white-100;
+  color: $black-100;
   font-size: 30px;
   cursor: pointer;
   outline: none;
@@ -582,7 +578,7 @@ a:focus, a:hover {
 
 .navigation .dropdown .dropdown-item:hover {
   background: transparent;
-  color: $main-100;
+  color: $color-2;
 }
 
 .navigation .dropdown .dropdown-menu {
@@ -631,7 +627,7 @@ a:focus, a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: $color-bg-main;
+  background: $color-2;
 }
 
 @media (max-width: 480px) {
@@ -657,7 +653,7 @@ a:focus, a:hover {
 }
 
 .hero-area .block p {
-  color: $color-subtitle;
+  color: $color-3;
   margin-bottom: 20px;
 }
 
@@ -706,7 +702,7 @@ a:focus, a:hover {
   transition: transform 300ms ease;
   transition: transform 300ms ease, -webkit-transform 300ms ease;
   background: $white-100;
-  color: $main-100;
+  color: $color-2;
   line-height: 80px;
   font-size: 30px;
   margin-left: 5px;
@@ -778,7 +774,7 @@ a:focus, a:hover {
 
 .about h4 {
   font-size: 14px;
-  color: $main-100;
+  color: $color-2;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -818,8 +814,8 @@ a:focus, a:hover {
 //   width: 12%;
 //   height: 3px;
 //   background-color: $orange-1;
-//   background-image: linear-gradient(100deg, $color-main-gradient-start, $main-100);
-//   background-image: linear-gradient(100deg, $color-main-gradient-start, $main-100);
+//   background-image: linear-gradient(100deg, $color-2, $color-2);
+//   background-image: linear-gradient(100deg, $color-2, $color-2);
 // }
 
 
@@ -911,7 +907,7 @@ a:focus, a:hover {
 .contact-form input:hover,
 .contact-form textarea:hover,
 .contact-form #contact-submit:hover {
-  border-color: $main-100;
+  border-color: $color-2;
 }
 
 .contact-form #contact-submit {
@@ -919,7 +915,7 @@ a:focus, a:hover {
   padding: 15px 0;
   width: 100%;
   margin: 0;
-  background: $main-100;
+  background: $color-2;
   color: $white-100;
   border-radius: 0;
   cursor: pointer;
@@ -949,7 +945,7 @@ a:focus, a:hover {
   height: 30px;
   width: 30px;
   text-align: center;
-  color: $main-100;
+  color: $color-2;
 }
 
 .social-icon li a i {
@@ -969,7 +965,7 @@ a:focus, a:hover {
 }
 
 .success {
-  background-color: $success-bg;
+  background-color: $color-3;
   border-radius: 4px;
   color: $white-100;
   display: none;
@@ -1040,13 +1036,13 @@ a:focus, a:hover {
 .counters-item i {
   font-size: 40px;
   display: inline-block;
-  color: $main-100;
+  color: $color-2;
 }
 
 .counters-item h3 {
   font-size: 18px;
   margin: 0;
-  color: $grey-medium;
+  color: $grey-light;
 }
 
 /*=================================================================
@@ -1072,7 +1068,7 @@ a:focus, a:hover {
 .pricing-table .pricing-item li {
   font-weight: 400;
   padding: 10px 0;
-  color: $grey-medium;
+  color: $grey-light;
 }
 
 .pricing-table .pricing-item li i {
@@ -1128,18 +1124,18 @@ a:focus, a:hover {
   font-weight: 600;
   text-transform: uppercase;
   border: none;
-  color: $grey-medium;
+  color: $grey-light;
   outline: none;
   background: none;
 }
 
 .portfolio-filter button:hover {
-  border-bottom: 2px solid $main-100;
+  border-bottom: 2px solid $color-2;
   color: $black-100;
 }
 
 .portfolio-filter button.active {
-  border-bottom: 2px solid $main-100;
+  border-bottom: 2px solid $color-2;
   color: $black-100;
 }
 
@@ -1161,7 +1157,7 @@ a:focus, a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: $main-090;
+  background: $color-2;
   transition: .3s all;
 }
 
@@ -1206,7 +1202,7 @@ a:focus, a:hover {
 }
 
 .portfolio-block .caption .search-icon {
-  background: $main-100;
+  background: $color-2;
   color: $white-100;
   display: inline-block;
   padding: 4px 13px;
@@ -1235,8 +1231,8 @@ a:focus, a:hover {
 
 .services .service-block i {
   font-size: 40px;
-  color: $main-100;
-  background: linear-gradient(100deg, $color-main-gradient-start, $main-100);
+  color: $color-2;
+  background: linear-gradient(100deg, $color-2, $color-2);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1248,7 +1244,7 @@ a:focus, a:hover {
 }
 
 .services .service-block p {
-  color: $grey-medium;
+  color: $grey-dark;
 }
 
 /*=================================================================
@@ -1304,7 +1300,7 @@ a:focus, a:hover {
 }
 
 .service-list .block {
-  background: $main-100;
+  background: $color-2;
   color: $white-100;
   padding: 30px;
 }
@@ -1328,7 +1324,7 @@ a:focus, a:hover {
 }
 .client-service-list li i{
   margin-right: 10px;
-  color: $main-100;
+  color: $color-2;
 }
 
 /*=================================================================
@@ -1351,7 +1347,7 @@ a:focus, a:hover {
 }
 
 .team-skills .progress-block .progress .progress-bar {
-  background: $main-100;
+  background: $color-2;
   box-shadow: none;
 }
 
@@ -1392,11 +1388,11 @@ a:focus, a:hover {
 }
 
 .development-steps .step-1 p {
-  color: $grey-medium;
+  color: $grey-light;
 }
 
 .development-steps .step-2 {
-  background-color: $main-100;
+  background-color: $color-2;
 }
 
 .development-steps .step-2 h4, .development-steps .step-2 p {
@@ -1404,7 +1400,7 @@ a:focus, a:hover {
 }
 
 .development-steps .step-3 {
-  background: $main-100;
+  background: $color-2;
 }
 
 .development-steps .step-3 h4, .development-steps .step-3 p {
@@ -1412,7 +1408,7 @@ a:focus, a:hover {
 }
 
 .development-steps .step-4 {
-  background: $main-100;
+  background: $color-2;
 }
 
 .development-steps .step-4 h4, .development-steps .step-4 p {
@@ -1452,7 +1448,7 @@ a:focus, a:hover {
 }
 
 .team-member .member-content p {
-  color: $grey-medium;
+  color: $grey-light;
   margin-top: 10px;
   padding: 0 15px;
 }
@@ -1472,15 +1468,15 @@ a:focus, a:hover {
 }
 
 .team-member .member-content ul li a i {
-  color: $main-100;
-  background: linear-gradient(100deg, $color-main-gradient-start, $main-100);
+  color: $color-2;
+  background: linear-gradient(100deg, $color-2, $color-2);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .team-member .member-content ul li a::hover {
-  background-color: $success-bg;
+  background-color: $color-3;
   border: 1px solid transparent;
 }
 
@@ -1497,7 +1493,7 @@ a:focus, a:hover {
   Testimonial section
 ==================================================================*/
 .testimonial {
-  background: $main-100;
+  background: $color-2;
   position: relative;
 }
 
@@ -1569,7 +1565,7 @@ a:focus, a:hover {
 
 .post-item .post-meta {
   font-size: 14px;
-  color: $grey-medium;
+  color: $grey-light;
 }
 
 .post-item .post-meta a {
@@ -1578,7 +1574,7 @@ a:focus, a:hover {
 }
 
 .post-item .post-content p {
-  color: $grey-medium;
+  color: $grey-light;
   margin: 10px 0;
 }
 
@@ -1642,7 +1638,7 @@ a:focus, a:hover {
 }
 
 .next-prev a:hover {
-  color: $main-100;
+  color: $color-2;
 }
 
 .next-prev .prev-post i {
@@ -1665,7 +1661,7 @@ a:focus, a:hover {
 }
 
 .social-profile ul li a i:hover {
-  color: $main-100;
+  color: $color-2;
 }
 
 .comments-section {
@@ -1713,13 +1709,13 @@ a:focus, a:hover {
 }
 
 .comment-wrap .media .media-heading a {
-  color: $main-100;
+  color: $color-2;
   font-size: 13px;
 }
 
 .comment-wrap .media .comment-meta {
   font-size: 12px;
-  color: $grey-medium;
+  color: $grey-light;
 }
 
 .comment-wrap .media p {
@@ -1738,7 +1734,7 @@ a:focus, a:hover {
 
 .comment-reply-form input:focus, .comment-reply-form textarea:focus {
   box-shadow: none;
-  border: 1px solid $main-100;
+  border: 1px solid $color-2;
 }
 
 .comment-reply-form textarea, .comment-reply-form .btn-main, .comment-reply-form .btn-main-sm {
@@ -1759,8 +1755,8 @@ a:focus, a:hover {
   color: $grey-light;
 }
 .pagination li.active a{
-  background-color: $main-100 !important;
-  border-color: $main-100 !important;
+  background-color: $color-2 !important;
+  border-color: $color-2 !important;
   font-weight: 600;
 }
 
@@ -1786,7 +1782,7 @@ a:focus, a:hover {
 .top-footer p {
   font-size: 13px;
   line-height: 30px;
-  color: $grey-medium;
+  color: $grey-light;
   font-weight: 300;
   padding-right: 20px;
 }
@@ -1794,7 +1790,7 @@ a:focus, a:hover {
 .top-footer li a {
   font-size: 13px;
   line-height: 30px;
-  color: $grey-medium;
+  color: $grey-light;
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: capitalize;
@@ -1804,7 +1800,7 @@ a:focus, a:hover {
 }
 
 .top-footer li a:hover {
-  color: $main-100;
+  color: $color-2;
 }
 
 .footer-bottom {
@@ -1817,7 +1813,7 @@ a:focus, a:hover {
 .footer-bottom h5 {
   font-size: 14px;
   line-height: 1;
-  color: $grey-medium;
+  color: $grey-light;
   font-weight: 400;
   text-transform: uppercase;
   margin-top: 7px;
@@ -1827,7 +1823,7 @@ a:focus, a:hover {
 .footer-bottom h6 {
   font-size: 13px;
   line-height: 15px;
-  color: $grey-medium;
+  color: $grey-light;
   font-weight: 400;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -1835,11 +1831,11 @@ a:focus, a:hover {
 }
 
 .footer-bottom p {
-  color: $grey-medium;
+  color: $grey-light;
 }
 
 .footer-bottom a {
-  color: $main-100;
+  color: $color-2;
 }
 
 .subscribe-form .form-control {
