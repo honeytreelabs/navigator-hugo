@@ -5,7 +5,6 @@ $black-034: unquote($black-100 + "56");
 $white-100: #fafafa;
 $color-1: #e8ab23; // honey
 $color-2: #395c6b;
-$color-3: #9e4770;
 $grey-light: #dddddd;
 $grey-dark: #222222;
 
@@ -409,7 +408,7 @@ a:focus, a:hover {
 }
 
 .title .border {
-  background-image: linear-gradient(100deg, $color-3, $color-3);
+  background-image: linear-gradient(100deg, $color-2, $color-2);
 }
 
 .header-bradcrumb {
@@ -662,7 +661,7 @@ a:focus, a:hover {
 }
 
 .hero-area .block p {
-  color: $color-3;
+  color: $color-2;
   margin-bottom: 20px;
 }
 
@@ -973,7 +972,7 @@ a:focus, a:hover {
 }
 
 .success {
-  background-color: $color-3;
+  background-color: $color-2;
   border-radius: 4px;
   color: $white-100;
   display: none;
@@ -1247,8 +1246,8 @@ a:focus, a:hover {
 
 .services .service-block i {
   font-size: 40px;
-  color: $color-3;
-  background: linear-gradient(100deg, $color-3, $color-3);
+  color: $color-2;
+  background: linear-gradient(100deg, $color-2, $color-2);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1492,7 +1491,7 @@ a:focus, a:hover {
 }
 
 .team-member .member-content ul li a::hover {
-  background-color: $color-3;
+  background-color: $color-2;
   border: 1px solid transparent;
 }
 
