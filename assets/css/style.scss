@@ -70,12 +70,13 @@ a:focus, a:hover {
   color: $color-2;
 }
 
-.btn-main, .btn-main-sm {
+.btn-main, .btn-main-sm, .btn-transparent {
   background-color: $color-1;
   background-image: linear-gradient(100deg, $color-2, $color-2);
   color: $white-100;
   display: inline-block;
   font-size: 14px;
+  font-weight: 500;
   letter-spacing: 1px;
   padding: 10px 40px;
   text-transform: uppercase;
@@ -92,15 +93,15 @@ a:focus, a:hover {
   font-size: 12px;
 }
 
-.btn-transparent {
-  color: $white-100;
-  border: 1px solid $white-100;
-  display: inline-block;
-  font-size: 13px;
-  letter-spacing: 1px;
-  padding: 10px 40px;
-  text-transform: uppercase;
-}
+// .btn-transparent {
+//   color: $white-100;
+//   border: 1px solid $white-100;
+//   display: inline-block;
+//   font-size: 13px;
+//   letter-spacing: 1px;
+//   padding: 10px 40px;
+//   text-transform: uppercase;
+// }
 
 .btn-transparent:hover {
   color: $white-100;
