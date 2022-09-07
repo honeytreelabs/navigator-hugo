@@ -25,7 +25,7 @@
                     <div class="collapse navbar-collapse" id="navigation">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ .Site.BaseURL | relLangURL }}">{{ with .Site.Params.home }}{{ . }}{{ end }}</a>
+                                <a class="nav-link" href="{{ .Site.BaseURL | relLangURL }}/">{{ with .Site.Params.home }}{{ . }}{{ end }}</a>
                             </li>
                             {{ range site.Menus.frontpage }}
                             {{ if .HasChildren }}
@@ -42,7 +42,7 @@
                             </li>
                             {{ else }}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ $.Site.BaseURL | relLangURL }}#{{ .Name }}">{{ i18n .Name }}</a>
+                                <a class="nav-link" href="{{ $.Site.BaseURL | relLangURL }}/#{{ .Name }}">{{ i18n .Name }}</a>
                             </li>
                             {{ end }}
                             {{ end }}
