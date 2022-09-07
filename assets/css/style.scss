@@ -1562,6 +1562,14 @@ a:focus, a:hover {
   margin-bottom: 40px;
 }
 
+.post-item .post-meta a {
+  color: $color-2;
+}
+
+.post-item .post-meta a:hover {
+  color: $color-1;
+}
+
 .post-item .post-thumb {
   margin-right: 10px;
 }
@@ -1584,11 +1592,9 @@ a:focus, a:hover {
 
 .post-item .post-meta {
   font-size: 14px;
-  color: $grey-light;
 }
 
 .post-item .post-meta a {
-  color: $black-100;
   margin: 3px 0;
 }
 
