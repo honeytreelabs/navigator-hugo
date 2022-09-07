@@ -22,10 +22,15 @@
                             {{ partial "flags.html" (dict "site" $.Site "page" $.Page) }}
                         </div>
                     </div>
+                    {{ $navUrl := ($.Site.BaseURL | relLangURL) }}
                     <div class="collapse navbar-collapse" id="navigation">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
+                                {{ if (strings.HasSuffix $navUrl "/") }}
+                                <a class="nav-link" href="{{ .Site.BaseURL | relLangURL }}">{{ with .Site.Params.home }}{{ . }}{{ end }}</a>
+                                {{ else }}
                                 <a class="nav-link" href="{{ .Site.BaseURL | relLangURL }}/">{{ with .Site.Params.home }}{{ . }}{{ end }}</a>
+                                {{ end }}
                             </li>
                             {{ range site.Menus.frontpage }}
                             {{ if .HasChildren }}
@@ -42,7 +47,11 @@
                             </li>
                             {{ else }}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ $.Site.BaseURL | relLangURL }}/#{{ .Name }}">{{ i18n .Name }}</a>
+                                {{ if (strings.HasSuffix $navUrl "/") }}
+                                <a class="nav-link" href="{{ $navUrl }}#{{ .Name }}">{{ i18n .Name }}</a>
+                                {{ else }}
+                                <a class="nav-link" href="{{ $navUrl }}/#{{ .Name }}">{{ i18n .Name }}</a>
+                                {{ end }}
                             </li>
                             {{ end }}
                             {{ end }}
