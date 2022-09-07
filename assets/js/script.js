@@ -122,10 +122,7 @@
 			/* declare the variables, var error is the variable that we use on the end
 			to determine if there was an error or not */
 			var error = false;
-			var name = $('#name').val();
 			var email = $('#email').val();
-			var subject = $('#subject').val();
-			var message = $('#message').val();
 			var checkboxDsgvo = $('#contact-dsgvo-checkbox').prop('checked');
 
 			/* in the next section we do the checking by using VARIABLE.length
@@ -139,29 +136,11 @@
 			The only difference from these checks is the email checking, we have
 			email.indexOf('@') which checks if there is @ in the email input field.
 			This JavaScript function will return -1 if no occurrence have been found.*/
-			if (name.length == 0) {
-				var error = true;
-				$('#name').css("border-color", "#D8000C");
-			} else {
-				$('#name').css("border-color", "#666");
-			}
 			if (email.length == 0 || email.indexOf('@') == '-1') {
 				var error = true;
 				$('#email').css("border-color", "#D8000C");
 			} else {
 				$('#email').css("border-color", "#666");
-			}
-			if (subject.length == 0) {
-				var error = true;
-				$('#subject').css("border-color", "#D8000C");
-			} else {
-				$('#subject').css("border-color", "#666");
-			}
-			if (message.length == 0) {
-				var error = true;
-				$('#message').css("border-color", "#D8000C");
-			} else {
-				$('#message').css("border-color", "#666");
 			}
 			if (!checkboxDsgvo) {
 				var error = true;
