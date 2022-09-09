@@ -5,10 +5,16 @@
       <div id="socnet-share">
         {{/*  {{ partial "share-buttons" . }}  */}}
       </div>
+      <div class="header">
+        <h1>{{ .Params.title }}</h1>
+      </div>
+      <div class="abstract">
+        {{ .Summary }}
+      </div>
       <div class="content">
         {{ .Render "featured" }}
-        {{ if and (gt .WordCount .Site.Params.tocWords) ( .Site.Params.toc ) }}
-	        {{/*  <p><b>Table of contents</b></p>  */}}
+        {{ if and (gt .WordCount .Site.Params.tocWords) ( .Params.toc ) }}
+	        <p><b>Table of contents</b></p>
           {{ .TableOfContents }}
         {{ end }}
         {{ .Content }}
