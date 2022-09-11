@@ -908,8 +908,13 @@ figcaption {
   }
 }
 
+#toc-p {
+  margin-bottom: 10px;
+}
+
 #TableOfContents {
   border: $secondary-border;
+  margin-bottom: 16px;
 
   ul {
     list-style-type: none;

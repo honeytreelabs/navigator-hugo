@@ -9,12 +9,12 @@
         <h1>{{ .Params.title }}</h1>
       </div>
       <div class="abstract">
-        {{ .Summary }}
+        <p>{{ .Summary }}</p>
       </div>
       <div class="content">
         {{ .Render "featured" }}
         {{ if and (gt .WordCount .Site.Params.tocWords) ( .Params.toc ) }}
-	        <p><b>Table of contents</b></p>
+          <h2>Table of Contents</h2>
           {{ .TableOfContents }}
         {{ end }}
         {{ .Content }}
