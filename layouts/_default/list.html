@@ -24,9 +24,20 @@
                         <ul class="list-inline">
                             <li class="list-inline-item">
                                 <span>By</span>
-                                {{ $author := index .Site.Data.authors (.Params.author | default "default") }}
-                                <a href="{{ $.Site.BaseURL }}author/{{ $author.handle }}">
-                                {{ $author.name }}
+                                {{ $data := index .Site.Data .Site.Language.Lang }}
+                                {{ if (reflect.IsSlice .Params.author) }}
+                                  {{ range $author_name := .Params.author }}
+                                    {{ $author := index $data.team.members $author_name }}
+                                    <a href="{{ $.Site.BaseURL }}author/{{ $author.handle }}">
+                                      {{ $author.name }}
+                                    </a>
+                                  {{ end }}
+                                {{ else }}
+                                  {{ $author := index $data.team.members .Params.author }}
+                                  <a href="{{ $.Site.BaseURL }}author/{{ $author.handle }}">
+                                    {{ $author.name }}
+                                  </a>
+                                {{ end }}
                             </li>
                             <li class="list-inline-item">
                                 <span>at</span>

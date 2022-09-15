@@ -19,11 +19,11 @@
       <footer>
         {{ .Render "stats" }}
       </footer>
+      <div class="authorbox">
+        {{ .Render "authorbox" }}
+      </div>
     </div>
-    {{ if not ( eq .Params.authorbox false) }}
-      {{ .Render "authorbox" }}
-    {{ end }}
-    {{ if not ( eq .Params.comments false) }}
+    {{ if .Params.comments }}
       {{ .Render "comments" }}
     {{ end }}
   </article>

@@ -1,0 +1,21 @@
+<hr />
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ if (reflect.IsSlice .Params.author) }}
+  {{ range $author_name := .Params.author }}
+    {{ $author := index $data.team.members $author_name }}
+    <div class="post-author">
+      <img src="{{ $author.image | absURL }}" alt="Avatar" />
+      <span class="author-about">
+        <b>{{ $author.name }}</b>: {{ $author.description }}
+      </span>
+    </div>
+  {{ end }}
+{{ else }}
+  {{ $author := index $data.team.members .Params.author }}
+  <div class="post-author">
+    <img src="{{ $author.image | absURL }}" alt="Avatar" />
+    <span class="author-about">
+      <b>{{ $author.name }}</b>: {{ $author.description }}
+    </span>
+  </div>
+{{ end }}
