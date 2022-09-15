@@ -120,16 +120,6 @@ a:focus, a:hover {
   font-size: 12px;
 }
 
-// .btn-transparent {
-//   color: $white-100;
-//   border: 1px solid $white-100;
-//   display: inline-block;
-//   font-size: 13px;
-//   letter-spacing: 1px;
-//   padding: 10px 40px;
-//   text-transform: uppercase;
-// }
-
 .btn-transparent:hover {
   color: $color-1;
 }
@@ -156,6 +146,10 @@ a:focus, a:hover {
 
 .btn:focus {
   color: $grey-light;
+}
+
+.btn.active:focus, .btn:active:focus, .btn:focus {
+  outline: 0;
 }
 
 #home {
@@ -188,10 +182,6 @@ a:focus, a:hover {
 
 .section-xs {
   padding: 40px 0;
-}
-
-.btn.active:focus, .btn:active:focus, .btn:focus {
-  outline: 0;
 }
 
 @-webkit-keyframes sk-circleBounceDelay {
