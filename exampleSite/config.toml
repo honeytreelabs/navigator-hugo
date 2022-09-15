@@ -186,17 +186,13 @@ name = "service"
 url = "service/"
 weight = 3
 [[menu.nav]]
-name = "portfolio"
-url = "portfolio/"
-weight = 4
-[[menu.nav]]
 name = "blog"
 url = "blog/"
-weight = 5
+weight = 4
 [[menu.nav]]
 name = "contact"
 url = "contact/"
-weight = 6
+weight = 5
 
 # Footer Service Menu
 [[menu.service]]
