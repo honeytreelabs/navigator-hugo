@@ -20,12 +20,12 @@ body {
   line-height: 1.4;
   font-family: "IBM Plex Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
+  font-size: 1em;
 }
 
 p {
   font-family: "IBM Plex Sans", sans-serif;
   color: $grey-dark;
-  font-size: 15px;
 }
 
 .content {
@@ -118,7 +118,6 @@ a:focus, a:hover {
   background-image: linear-gradient(100deg, $color-2, $color-2);
   color: $white-100;
   display: inline-block;
-  font-size: 14px;
   font-weight: 500;
   letter-spacing: 1px;
   padding: 10px 40px;
@@ -637,7 +636,6 @@ a:focus, a:hover {
 }
 
 .about h4 {
-  font-size: 14px;
   color: $color-2;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -720,7 +718,6 @@ a:focus, a:hover {
   // color: $black-100;
   height: 38px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
   border-radius: 3px;
 }
 
@@ -954,7 +951,6 @@ a:focus, a:hover {
 .team-skills .progress-block span {
   display: inline-block;
   margin-bottom: 5px;
-  font-size: 14px;
 }
 
 .team-skills .progress-block .progress {
@@ -1000,7 +996,6 @@ a:focus, a:hover {
 }
 
 .team-member .member-content span {
-  font-size: 14px;
   color: $grey-dark;
 }
 
@@ -1083,7 +1078,6 @@ a:focus, a:hover {
 }
 
 .post-item .post-meta {
-  font-size: 14px;
 }
 
 .post-item .post-meta a {
@@ -1221,7 +1215,6 @@ a:focus, a:hover {
 }
 
 .comment-wrap .media .media-heading {
-  font-size: 14px;
   margin-bottom: 8px;
 }
 
@@ -1328,7 +1321,6 @@ a:focus, a:hover {
 }
 
 .footer-bottom h5 {
-  font-size: 14px;
   line-height: 1;
   color: $grey-light;
   font-weight: 400;
