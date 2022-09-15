@@ -30,5 +30,8 @@
 {{ "<!-- Original Stylesheet -->" | safeHTML }}
 {{ $style := resources.Get "css/style.scss" | resources.ToCSS (dict "targetPath" "css/style.min.css" "outputStyle" $outputStyle) | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
+{{ "<!-- Code Listings Stylesheet -->" | safeHTML }}
+{{ $style := resources.Get "css/code.scss" | resources.ToCSS (dict "targetPath" "css/code.min.css" "outputStyle" $outputStyle) | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
 
 </head>
