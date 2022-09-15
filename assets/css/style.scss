@@ -36,6 +36,16 @@ p {
   line-height: 1.2rem;
 }
 
+.post {
+  margin: 1.5em auto;
+  max-width: 55em;
+  > div {
+    > p {
+      text-align: justify;
+    }
+  }
+}
+
 #TableOfContents {
   border: 1px dotted hsla(0, 0%, 63%, 0.7);
   margin-bottom: 16px;
