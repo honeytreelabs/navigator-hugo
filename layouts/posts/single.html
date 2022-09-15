@@ -14,7 +14,7 @@
           <h2>Table of Contents</h2>
           {{ .TableOfContents }}
         {{ end }}
-        {{ .Content }}
+        {{ (replace .Content .Summary "") | safeHTML }}
       </div>
       <footer>
         {{ .Render "stats" }}
