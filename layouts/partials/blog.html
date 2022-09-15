@@ -48,14 +48,14 @@
                             <p>{{ .Summary }}</p>
                         {{end}}
                     </div>
-                    <a class="btn btn-main" href="{{ .Permalink }}">Read more</a>
+                    <a class="btn btn-main" href="{{ .Permalink }}">{{ i18n "readmore" }}</a>
                 </div>
             </article>
             {{ "<!-- /single blog post -->" | safeHTML }}
             {{ end }}
         </div>
         <div class="row">
-            <a class="btn btn-main" style="margin-left: auto; margin-right: auto;" href="{{ .Permalink }}posts">See all posts...</a>
+            <a class="btn btn-main" style="margin-left: auto; margin-right: auto;" href="{{ "posts/" | absURL }}">{{ i18n "seeallposts" }}</a>
         </div>        
     </div>
 </section>
