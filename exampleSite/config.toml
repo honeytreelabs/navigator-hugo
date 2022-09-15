@@ -92,14 +92,6 @@ mapLatitude = "51.507351"
 mapLongitude = "-0.127758"
 mapMarker = "images/marker.png"
 
-# Call to Action Section on About Page
-[Languages.fr.params.cta]
-enable = true
-bg = "images/call-to-action/call-to-action-bg-2.jpg"
-title = "FRANCAIS Let's Create Something Together"
-subtitle = "Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin bibendum auctor, <br> nisi elit consequat ipsum, nesagittis sem nid elit. Duis sed odio sitain elit."
-btnText = "Nous contacter"
-
 ############# 2 - Site en ENGLISH
 [Languages.en]
 weight = 2
@@ -163,14 +155,6 @@ instagram = "https://www.instagram.com/"
 mapLatitude = "51.507351"
 mapLongitude = "-0.127758"
 mapMarker = "images/marker.png"
-
-# Call to Action Section on About Page
-[Languages.en.params.cta]
-enable = true
-bg = "images/call-to-action/call-to-action-bg-2.jpg"
-title = "Let's Create Something Together"
-subtitle = "Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin bibendum auctor, <br> nisi elit consequat ipsum, nesagittis sem nid elit. Duis sed odio sitain elit."
-btnText = "Contact Us"
 
 # We Used Themefisher Icon font for Icon, for more details check this github repository - https://github.com/themefisher/themefisher-font
 
