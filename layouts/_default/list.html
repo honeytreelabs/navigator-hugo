@@ -32,7 +32,7 @@
                                       {{ $author.name }}
                                     </a>
                                   {{ end }}
-                                {{ else }}
+                                {{ else if isset .Params "author" }}
                                   {{ $author := index $data.team.members .Params.author }}
                                   <a href="{{ $.Site.BaseURL }}author/{{ $author.handle }}">
                                     {{ $author.name }}
