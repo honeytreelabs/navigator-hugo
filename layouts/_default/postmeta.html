@@ -1,0 +1,29 @@
+<div class="post-meta">
+    <ul class="list-inline">
+        <li class="list-inline-item">
+            <span>By</span>
+            {{ $data := index .Site.Data "en" }}{{/* only English is supported */}}
+            {{ if (reflect.IsSlice .Params.author) }}
+                {{ $numAuthors := len .Params.author }}
+                {{ range $author_idx, $author_name := .Params.author }}
+                {{ $author := index $data.team.members $author_name }}
+                    <a href="{{ $.Site.BaseURL }}author/{{ $author.handle }}">
+                    {{ $author.shortname }}
+                    </a>
+                {{ if (lt $author_idx (sub $numAuthors 1)) }}
+                    and
+                {{ end }}
+                {{ end }}
+            {{ else if isset .Params "author" }}
+                {{ $author := index $data.team.members .Params.author }}
+                <a href="{{ $.Site.BaseURL }}author/{{ $author.handle }}">
+                {{ $author.shortname }}
+                </a>
+            {{ end }}
+        </li>
+        <li class="list-inline-item">
+            <span>on</span>
+            <span>{{ .Lastmod | time.Format ":date_long" }}</span>
+        </li>
+    </ul>
+</div>

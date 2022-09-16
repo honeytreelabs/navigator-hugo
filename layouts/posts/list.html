@@ -20,31 +20,7 @@
                             <a href="{{ .Permalink }}">{{ .Title }}</a>
                         </h3>
                     </div>
-                    <div class="post-meta">
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <span>By</span>
-                                {{ $data := index .Site.Data .Site.Language.Lang }}
-                                {{ if (reflect.IsSlice .Params.author) }}
-                                  {{ range $author_name := .Params.author }}
-                                    {{ $author := index $data.team.members $author_name }}
-                                    <a href="{{ $.Site.BaseURL }}author/{{ $author.handle }}">
-                                      {{ $author.name }}
-                                    </a>
-                                  {{ end }}
-                                {{ else if isset .Params "author" }}
-                                  {{ $author := index $data.team.members .Params.author }}
-                                  <a href="{{ $.Site.BaseURL }}author/{{ $author.handle }}">
-                                    {{ $author.name }}
-                                  </a>
-                                {{ end }}
-                            </li>
-                            <li class="list-inline-item">
-                                <span>at</span>
-                                <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
-                            </li>
-                        </ul>
-                    </div>
+                    {{ .Render "postmeta" }}
                     <div class="post-content">
                         {{ if .Params.draft }}
                             <div style="background-color:Khaki;">{{ .Summary }}</div>

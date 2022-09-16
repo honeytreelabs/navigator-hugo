@@ -41,6 +41,9 @@ p {
       text-align: justify;
     }
   }
+  .date-and-author {
+    color: $grey-dark;
+  }
 }
 
 figure {
@@ -1079,7 +1082,8 @@ $header-height: 111px;
   color: $black-100;
 }
 
-.post-item .post-meta {
+.post-meta .list-inline-item {
+  margin-right: 0px;
 }
 
 .post-item .post-meta a {
