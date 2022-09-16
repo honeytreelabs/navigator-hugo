@@ -12,6 +12,8 @@ $grey-dark: #222222;
 $error-1: #D8000C;
 $error-bg: #FFBABA;
 
+$header-height: 111px;
+
 $font-prefix: './fonts/ibm/plex/';
 @import 'static/css/fonts/ibm/plex/scss/ibm-plex.scss';
 
@@ -43,6 +45,10 @@ p {
   }
   .date-and-author {
     color: $grey-dark;
+  }
+  :target::before {
+    /* negative fixed header height */
+    margin: -$header-height 0 0;
   }
 }
 
@@ -385,12 +391,11 @@ a:focus, a:hover {
 }
 
 // https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors
-$header-height: 111px;
 :target::before {
   content: "";
   display: block;
-  height: $header-height; /* fixed header height*/
-  margin: -$header-height 0 0; /* negative fixed header height */
+  /* fixed header height*/
+  height: $header-height;
 }
 
 .navigation .navbar-nav > li.active .nav-link {
