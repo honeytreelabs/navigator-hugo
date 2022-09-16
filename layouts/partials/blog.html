@@ -34,7 +34,7 @@
                             <p>{{ .Summary }}</p>
                         {{end}}
                     </div>
-                    <a class="btn btn-main" href="{{ .Permalink }}">{{ i18n "readmore" }}</a>
+                    <a class="btn btn-main" href="{{ replace (.Permalink | relURL) (printf "/%s/" .Site.Language) "/posts/" | absURL }}">{{ i18n "readmore" }}</a>
                 </div>
             </article>
             {{ "<!-- /single blog post -->" | safeHTML }}
