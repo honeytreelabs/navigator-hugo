@@ -115,7 +115,7 @@
 				we submit it to send_email.php */
 				$.post("/contact", $("#contact-form").serialize(), function (result) {
 					//and after the ajax request ends we check the text returned
-					if (result == 'sent') {
+					if (result == 'Sent.') {
 						//if the mail is sent remove the submit paragraph
 						$('#cf-submit').remove();
 						//and show the mail success div with fadeIn
