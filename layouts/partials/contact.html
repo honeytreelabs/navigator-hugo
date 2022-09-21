@@ -25,15 +25,27 @@
             <div class="contact-form col-12 col-md-6 ">
                 <form id="contact-form" method="post" action="sendmail.php" role="form">
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
+                        {{ with .Site.Params.contact.placeholderEmail }}
+                            <input type="email" placeholder="{{ . }}" class="form-control" name="email" id="email">
+                        {{ end }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ with .Site.Params.contact.placeholderMessage }}
+                            <textarea rows="6" placeholder="{{ . }}" class="form-control" name="message" id="message"></textarea>
+                        {{ end }}
                     </div>
 
                     <div id="mail-success" class="success">
-                        Thank you. The Mailman is on His Way :)
+                        {{ with .Site.Params.contact.success }}
+                            {{ . }}
+                        {{ end }}
                     </div>
 
                     <div id="mail-fail" class="error">
-                        Sorry, don't know what happened. Try later :(
+                        {{ with .Site.Params.contact.error }}
+                            {{ . }}
+                        {{ end }}
                     </div>
 
                     <div id="cf-submit">
