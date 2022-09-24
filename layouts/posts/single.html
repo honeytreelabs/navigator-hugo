@@ -44,6 +44,13 @@
       mermaid.initialize({ startOnLoad: true });
     </script>
   {{ end }}
+  {{ if (findRE "<pre" .Content 1) }}
+    {{ $script := resources.Get "js/clipboard.js" | minify }}
+    <script src="{{ $script.Permalink }}"></script>
+    {{ $outputStyle := "compressed" }}
+    {{ $style := resources.Get "css/clipboard.scss" | resources.ToCSS (dict "targetPath" "css/clipboard.min.css" "outputStyle" $outputStyle) | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
+  {{ end }}
 
 {{ end }}
 
