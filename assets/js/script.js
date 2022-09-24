@@ -1,71 +1,69 @@
-	(function ($) {
-		"use strict";
+(function ($) {
+	"use strict";
 
-		/* ========================================================================= */
-		/*   Contact Form Validating
-		/* ========================================================================= */
+	/* ========================================================================= */
+	/*   Contact Form Validating
+	/* ========================================================================= */
+	$('#contact-submit').click(function (e) {
+		//stop the form from being submitted
+		e.preventDefault();
 
-		$('#contact-submit').click(function (e) {
+		/* declare the variables, var error is the variable that we use on the end
+		to determine if there was an error or not */
+		var error = false;
+		var email = $('#email').val();
+		var checkboxDsgvo = $('#contact-dsgvo-checkbox').prop('checked');
 
-			//stop the form from being submitted
-			e.preventDefault();
+		/* in the next section we do the checking by using VARIABLE.length
+		where VARIABLE is the variable we are checking (like name, email),
+		length is a JavaScript function to get the number of characters.
+		And as you can see if the num of characters is 0 we set the error
+		variable to true and show the name_error div with the fadeIn effect.
+		if it's not 0 then we fadeOut the div( that's if the div is shown and
+		the error is fixed it fadesOut.
 
-			/* declare the variables, var error is the variable that we use on the end
-			to determine if there was an error or not */
-			var error = false;
-			var email = $('#email').val();
-			var checkboxDsgvo = $('#contact-dsgvo-checkbox').prop('checked');
+		The only difference from these checks is the email checking, we have
+		email.indexOf('@') which checks if there is @ in the email input field.
+		This JavaScript function will return -1 if no occurrence have been found.*/
+		if (email.length == 0 || email.indexOf('@') == '-1') {
+			var error = true;
+			$('#email').css("border-color", "#D8000C");
+		} else {
+			$('#email').css("border-color", "#666");
+		}
+		if (!checkboxDsgvo) {
+			var error = true;
+			$('#contact-dsgvo-label').css("color", "#D8000C");
+		} else {
+			$('#contact-dsgvo-label').css("color", "#666");
+		}
 
-			/* in the next section we do the checking by using VARIABLE.length
-			where VARIABLE is the variable we are checking (like name, email),
-			length is a JavaScript function to get the number of characters.
-			And as you can see if the num of characters is 0 we set the error
-			variable to true and show the name_error div with the fadeIn effect.
-			if it's not 0 then we fadeOut the div( that's if the div is shown and
-			the error is fixed it fadesOut.
+		//now when the validation is done we check if the error variable is false (no errors)
+		if (error == false) {
+			//disable the submit button to avoid spamming
+			//and change the button text to Sending...
+			$('#contact-submit').attr({
+				'disabled': 'false',
+				'value': 'Sending...'
+			});
 
-			The only difference from these checks is the email checking, we have
-			email.indexOf('@') which checks if there is @ in the email input field.
-			This JavaScript function will return -1 if no occurrence have been found.*/
-			if (email.length == 0 || email.indexOf('@') == '-1') {
-				var error = true;
-				$('#email').css("border-color", "#D8000C");
-			} else {
-				$('#email').css("border-color", "#666");
-			}
-			if (!checkboxDsgvo) {
-				var error = true;
-				$('#contact-dsgvo-label').css("color", "#D8000C");
-			} else {
-				$('#contact-dsgvo-label').css("color", "#666");
-			}
-
-			//now when the validation is done we check if the error variable is false (no errors)
-			if (error == false) {
-				//disable the submit button to avoid spamming
-				//and change the button text to Sending...
-				$('#contact-submit').attr({
-					'disabled': 'false',
-					'value': 'Sending...'
-				});
-
-				/* using the jquery's post(ajax) function and a lifesaver
-				function serialize() which gets all the data from the form
-				we submit it to send_email.php */
-				$.post("/contact", $("#contact-form").serialize(), function (result) {
-					//and after the ajax request ends we check the text returned
-					if (result == 'Sent.') {
-						//if the mail is sent remove the submit paragraph
-						$('#cf-submit').remove();
-						//and show the mail success div with fadeIn
-						$('#mail-success').fadeIn(500);
-					} else {
-						//show the mail failed div
-						$('#mail-fail').fadeIn(500);
-						//re enable the submit button by removing attribute disabled and change the text back to Send The Message
-						$('#contact-submit').removeAttr('disabled').attr('value', 'Send The Message');
-					}
-				});
-			}
-		});
-	})(jQuery);
+			/* using the jquery's post(ajax) function and a lifesaver
+			function serialize() which gets all the data from the form
+			we submit it to send_email.php */
+			$.post("/contact", $("#contact-form").serialize(), function (result) {
+				//and after the ajax request ends we check the text returned
+				if (result == 'Sent.') {
+					//if the mail is sent remove the submit paragraph
+					$('#cf-submit').remove();
+					//and show the mail success div with fadeIn
+					$('#mail-success').fadeIn(500);
+				} else {
+					//show the mail failed div
+					$('#mail-fail').fadeIn(500);
+					//re enable the submit button by removing attribute disabled and change the text back to Send The Message
+					$('#contact-submit').removeAttr('disabled').attr('value', 'Send The Message');
+				}
+			});
+		}
+	});
+})(jQuery);
