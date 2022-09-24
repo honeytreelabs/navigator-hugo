@@ -2,69 +2,8 @@
 		"use strict";
 
 		/* ========================================================================= */
-		/*	Clients Slider Carousel
-		/* =========================================================================  */
-
-		//Init the slider
-		$('.clients-logo-slider').slick({
-			infinite: true,
-			arrows: false,
-			autoplay: true,
-			autoplaySpeed: 2000,
-			slidesToShow: 5,
-			slidesToScroll: 1,
-		});
-
-
-
-
-		/* ========================================================================= */
-		/*	Company Slider Carousel
-		/* =========================================================================  */
-		$('.company-gallery').slick({
-			infinite: true,
-			arrows: false,
-			autoplay: true,
-			autoplaySpeed: 2000,
-			slidesToShow: 5,
-			slidesToScroll: 1,
-		});
-
-
-		/* ========================================================================= */
-		/*	Awars Counter Js
-		/* =========================================================================  */
-		$('.counter').each(function () {
-			var $this = $(this),
-				countTo = $this.attr('data-count');
-
-			$({
-				countNum: $this.text()
-			}).animate({
-					countNum: countTo
-				},
-
-				{
-					duration: 1500,
-					easing: 'linear',
-					step: function () {
-						$this.text(Math.floor(this.countNum));
-					},
-					complete: function () {
-						$this.text(this.countNum);
-						//alert('finished');
-					}
-
-				});
-		});
-
-
-
-
-		/* ========================================================================= */
 		/*   Contact Form Validating
 		/* ========================================================================= */
-
 
 		$('#contact-submit').click(function (e) {
 
@@ -129,6 +68,4 @@
 				});
 			}
 		});
-
-
 	})(jQuery);
