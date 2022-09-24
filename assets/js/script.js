@@ -39,7 +39,7 @@
 		}
 
 		//now when the validation is done we check if the error variable is false (no errors)
-		if (error == false) {
+		if (!error) {
 			//disable the submit button to avoid spamming
 			//and change the button text to Sending...
 			$('#contact-submit').attr({
