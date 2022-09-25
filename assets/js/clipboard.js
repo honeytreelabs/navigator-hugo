@@ -5,13 +5,9 @@ const svgCheck =
 
 function getContents(node) {
     var contents = "";
-    for (var i = 0; i < node.childNodes.length; i++) {
-        var child = node.childNodes[i];
-        if (child.className == "cl") {
-            contents += child.innerText;
-        }
-        contents += getContents(child);
-    }
+    Array.from(node.getElementsByClassName("cl")).forEach((codeLine) => {
+        contents += codeLine.innerText;
+    });
 
     return contents;
 }
