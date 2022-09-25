@@ -1,3 +1,16 @@
+function getContents(node) {
+    var contents = "";
+    for (var i = 0; i < node.childNodes.length; i++) {
+        var child = node.childNodes[i];
+        if (child.className == "cl") {
+            contents += child.innerText;
+        }
+        contents += getContents(child);
+    }
+
+    return contents;
+}
+
 const addCopyButtons = (clipboard) => {
     // 1. Look for pre > code elements in the DOM
     document.querySelectorAll("pre > code").forEach((codeBlock) => {
@@ -7,7 +20,7 @@ const addCopyButtons = (clipboard) => {
         button.type = "button";
         button.innerHTML = svgCopy;
         button.addEventListener("click", () => {
-            clipboard.writeText(codeBlock.innerText).then(
+            clipboard.writeText(getContents(codeBlock)).then(
                 () => {
                     button.blur();
                     button.innerHTML = svgCheck;
