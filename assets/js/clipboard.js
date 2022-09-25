@@ -39,10 +39,12 @@ const addCopyButtons = (clipboard) => {
 if (navigator && navigator.clipboard) {
     addCopyButtons(navigator.clipboard);
 } else {
+    // either Clipboard API not yet supported by this browser or
+    // site not hosted on secure origin: https://stackoverflow.com/a/51823007
     const script = document.createElement("script");
-    script.src =
-        "https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.7.0/clipboard-polyfill.promise.js";
-    script.integrity = "sha256-waClS2re9NUbXRsryKoof+F9qc1gjjIhc2eT7ZbIv94=";
+    // https://cdnjs.com/libraries/clipboard-polyfill; Version 3.0.3
+    script.src = "/plugins/clipboard-polyfill/clipboard-polyfill.min.js";
+    script.integrity = "sha256-F5G4Yh2JTKL57gm6K6FsmRimVClYqKiQCcKt99hKQwo=";
     script.crossOrigin = "anonymous";
     script.onload = () => addCopyButtons(clipboard);
     document.body.appendChild(script);
