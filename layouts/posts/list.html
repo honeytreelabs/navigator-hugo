@@ -6,7 +6,10 @@
 <section class="blog section" id="blog">
     <div class="container">
         <div class="row">
-            {{ range (.Paginator 12).Pages }}
+            {{- $posts := where .Site.RegularPages.ByDate.Reverse "Section" "posts" -}}
+            {{- $sorted_posts := sort $posts "Params.start" "asc" -}}
+            {{- $paginator := .Paginate $sorted_posts 12 -}}
+            {{ range $paginator.Pages }}
             {{ "<!-- single blog post -->" | safeHTML }}
             <article class="col-12 col-md-4">
                 <div class="post-item">
