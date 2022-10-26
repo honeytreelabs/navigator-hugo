@@ -982,7 +982,6 @@ a:focus, a:hover {
   ==================================================================*/
 .team-member {
   background: $white-100;
-  margin-bottom: 15px;
 }
 
 .team-member:hover img {
@@ -995,7 +994,7 @@ a:focus, a:hover {
 }
 
 .team-member .member-content {
-  padding: 25px 0;
+  padding-top: 25px;
 }
 
 .team-member .member-content h3 {
